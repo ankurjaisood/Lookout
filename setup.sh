@@ -17,6 +17,20 @@ fi
 PYTHON_VERSION=$(python3 --version | cut -d' ' -f2)
 echo "✅ Python $PYTHON_VERSION found"
 
+# Check Python version compatibility
+PYTHON_MAJOR=$(echo $PYTHON_VERSION | cut -d'.' -f1)
+PYTHON_MINOR=$(echo $PYTHON_VERSION | cut -d'.' -f2)
+
+if [ "$PYTHON_MAJOR" -eq 3 ] && [ "$PYTHON_MINOR" -ge 10 ] && [ "$PYTHON_MINOR" -le 12 ]; then
+    echo "✅ Python version is compatible"
+elif [ "$PYTHON_MAJOR" -eq 3 ] && [ "$PYTHON_MINOR" -eq 13 ]; then
+    echo "⚠️  WARNING: Python 3.13 detected. Recommended: Python 3.10-3.12"
+    echo "   Setup will continue but you may encounter compatibility issues."
+elif [ "$PYTHON_MAJOR" -eq 3 ] && [ "$PYTHON_MINOR" -lt 10 ]; then
+    echo "❌ Python 3.10 or higher is required. Found: Python $PYTHON_VERSION"
+    exit 1
+fi
+
 # Check Node.js
 if ! command -v node &> /dev/null; then
     echo "❌ Node.js is not installed. Please install Node.js 18 or higher."

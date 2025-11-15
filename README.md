@@ -33,7 +33,9 @@ Lookout combines a React frontend, FastAPI backend, and Google Gemini AI to prov
 
 ## Prerequisites
 
-- **Python 3.10+**
+- **Python 3.10-3.12** (recommended)
+  - Python 3.13 works but may have dependency compatibility issues
+  - Python 3.10, 3.11, or 3.12 recommended for best compatibility
 - **Node.js 18+**
 - **Google Gemini API Key** - Get one at https://makersuite.google.com/app/apikey
 
@@ -275,6 +277,24 @@ npm install
 npm run dev
 ```
 
+### Python Version Issues
+
+**Python 3.13 Compatibility:**
+If you encounter dependency installation errors with Python 3.13:
+```bash
+# Use Python 3.10-3.12 instead (recommended)
+# Install pyenv to manage Python versions:
+brew install pyenv
+pyenv install 3.12.0
+pyenv local 3.12.0
+
+# Then re-run setup
+./setup.sh
+```
+
+**bcrypt/passlib Errors:**
+The project requires `bcrypt==4.1.2` for compatibility with passlib. This is already specified in `requirements.txt`.
+
 ## Development
 
 ### Run Backend Only
@@ -297,8 +317,9 @@ Visit http://localhost:8000/docs for interactive API documentation (Swagger UI).
 
 ### Run Tests
 
-The project includes 47 comprehensive tests covering all major functionality:
+The project includes **95 comprehensive tests** covering all major functionality:
 
+**Backend Tests (46 tests):**
 ```bash
 cd backend
 source venv/bin/activate
@@ -317,10 +338,31 @@ pytest tests/test_crud.py::TestUserCRUD
 pytest --cov=. --cov-report=html
 ```
 
-**Test Coverage:**
-- 21 CRUD unit tests
-- 12 API integration tests
+**Backend Test Coverage:**
+- 19 CRUD unit tests
+- 13 API integration tests
 - 14 agent interface tests
+
+**Frontend Tests (49 tests):**
+```bash
+cd frontend
+npm test
+
+# Run with UI
+npm test -- --ui
+
+# Run specific test file
+npm test -- api.test.js
+```
+
+**Frontend Test Coverage:**
+- 14 API service tests
+- 7 AuthContext tests
+- 7 LoginPage tests
+- 8 SignupPage tests
+- 13 SessionsPage tests
+
+**Total: 95 tests across full stack** ✅
 
 ## Technical Details
 
