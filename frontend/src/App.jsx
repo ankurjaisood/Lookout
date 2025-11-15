@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider, useAuth } from './context/AuthContext'
+import LandingPage from './pages/LandingPage'
 import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
 import SessionsPage from './pages/SessionsPage'
@@ -29,8 +30,18 @@ function PublicRoute({ children }) {
 }
 
 function AppRoutes() {
+  const { isAuthenticated, loading } = useAuth();
+
+  if (loading) {
+    return <div className="loading">Loading...</div>;
+  }
+
   return (
     <Routes>
+      <Route
+        path="/"
+        element={isAuthenticated ? <Navigate to="/sessions" /> : <LandingPage />}
+      />
       <Route
         path="/login"
         element={
@@ -63,7 +74,6 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
-      <Route path="/" element={<Navigate to="/sessions" />} />
     </Routes>
   );
 }

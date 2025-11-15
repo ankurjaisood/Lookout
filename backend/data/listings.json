@@ -1,0 +1,1802 @@
+[
+    {
+        "id": "car_0",
+        "title": "Used 2018 Mazda Miata (Silver)",
+        "category": "Cars",
+        "price": 24693,
+        "imageUrl": "https://img2.carmax.com/assets/24707878/385.jpg",
+        "description": "A fun and sporty 2018 Mazda Miata in Silver with 132,458 miles. Shows some minor wear and tear typical for its age, but runs great. A fantastic convertible for sunny days.",
+        "condition": "used"
+    },
+    {
+        "id": "car_1",
+        "title": "Used 2006 Mazda Miata (Silver)",
+        "category": "Cars",
+        "price": 10565,
+        "imageUrl": "https://img2.carmax.com/assets/24707878/385.jpg",
+        "description": "A fun and sporty 2006 Mazda Miata in Silver with 54,258 miles. Shows some minor wear and tear typical for its age, but runs great. A fantastic convertible for sunny days.",
+        "condition": "used"
+    },
+    {
+        "id": "car_2",
+        "title": "Used 2015 Mazda Miata (Silver)",
+        "category": "Cars",
+        "price": 8739,
+        "imageUrl": "https://img2.carmax.com/assets/24707878/385.jpg",
+        "description": "A fun and sporty 2015 Mazda Miata in Silver with 50,889 miles. Shows some minor wear and tear typical for its age, but runs great. A fantastic convertible for sunny days.",
+        "condition": "used"
+    },
+    {
+        "id": "car_3",
+        "title": "Used 2007 Mazda Miata (Silver)",
+        "category": "Cars",
+        "price": 19673,
+        "imageUrl": "https://img2.carmax.com/assets/24707878/385.jpg",
+        "description": "A fun and sporty 2007 Mazda Miata in Silver with 106,103 miles. Shows some minor wear and tear typical for its age, but runs great. A fantastic convertible for sunny days.",
+        "condition": "used"
+    },
+    {
+        "id": "car_4",
+        "title": "Used 2015 Mazda Miata (Blue)",
+        "category": "Cars",
+        "price": 22064,
+        "imageUrl": "https://img2.carmax.com/assets/24707878/385.jpg",
+        "description": "A fun and sporty 2015 Mazda Miata in Blue with 147,249 miles. Shows some minor wear and tear typical for its age, but runs great. A fantastic convertible for sunny days.",
+        "condition": "used"
+    },
+    {
+        "id": "car_5",
+        "title": "Used 2011 Mazda Miata (White)",
+        "category": "Cars",
+        "price": 8669,
+        "imageUrl": "https://img2.carmax.com/assets/24707878/385.jpg",
+        "description": "A fun and sporty 2011 Mazda Miata in White with 85,312 miles. Shows some minor wear and tear typical for its age, but runs great. A fantastic convertible for sunny days.",
+        "condition": "used"
+    },
+    {
+        "id": "car_6",
+        "title": "Used 2005 Mazda Miata (Blue)",
+        "category": "Cars",
+        "price": 24099,
+        "imageUrl": "https://img2.carmax.com/assets/24707878/385.jpg",
+        "description": "A fun and sporty 2005 Mazda Miata in Blue with 78,025 miles. Shows some minor wear and tear typical for its age, but runs great. A fantastic convertible for sunny days.",
+        "condition": "used"
+    },
+    {
+        "id": "car_7",
+        "title": "Used 2020 Mazda Miata (Blue)",
+        "category": "Cars",
+        "price": 24450,
+        "imageUrl": "https://img2.carmax.com/assets/24707878/385.jpg",
+        "description": "A fun and sporty 2020 Mazda Miata in Blue with 99,521 miles. Shows some minor wear and tear typical for its age, but runs great. A fantastic convertible for sunny days.",
+        "condition": "used"
+    },
+    {
+        "id": "car_8",
+        "title": "Used 2018 Mazda Miata (Black)",
+        "category": "Cars",
+        "price": 14004,
+        "imageUrl": "https://img2.carmax.com/assets/24707878/385.jpg",
+        "description": "A fun and sporty 2018 Mazda Miata in Black with 38,433 miles. Shows some minor wear and tear typical for its age, but runs great. A fantastic convertible for sunny days.",
+        "condition": "used"
+    },
+    {
+        "id": "car_9",
+        "title": "Used 2009 Mazda Miata (Blue)",
+        "category": "Cars",
+        "price": 8319,
+        "imageUrl": "https://img2.carmax.com/assets/24707878/385.jpg",
+        "description": "A fun and sporty 2009 Mazda Miata in Blue with 71,718 miles. Shows some minor wear and tear typical for its age, but runs great. A fantastic convertible for sunny days.",
+        "condition": "used"
+    },
+    {
+        "id": "car_10",
+        "title": "Used 2013 Lexus IS 250 (Black)",
+        "category": "Cars",
+        "price": 22082,
+        "imageUrl": "https://platform.cstatic-images.com/xlarge/in/v2/stock_photos/d5360405-2044-4238-8823-354995642a87/2a23578b-45e5-4406-806e-d5253add395f.jpg",
+        "description": "A luxurious and reliable 2013 Lexus IS 250 in Black with 114,392 miles. Interior is clean, some minor scuffs on the exterior. Smooth ride and packed with features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_11",
+        "title": "Used 2016 Lexus IS 250 (Blue)",
+        "category": "Cars",
+        "price": 27677,
+        "imageUrl": "https://platform.cstatic-images.com/xlarge/in/v2/stock_photos/d5360405-2044-4238-8823-354995642a87/2a23578b-45e5-4406-806e-d5253add395f.jpg",
+        "description": "A luxurious and reliable 2016 Lexus IS 250 in Blue with 79,040 miles. Interior is clean, some minor scuffs on the exterior. Smooth ride and packed with features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_12",
+        "title": "Used 2010 Lexus IS 250 (White)",
+        "category": "Cars",
+        "price": 19388,
+        "imageUrl": "https://platform.cstatic-images.com/xlarge/in/v2/stock_photos/d5360405-2044-4238-8823-354995642a87/2a23578b-45e5-4406-806e-d5253add395f.jpg",
+        "description": "A luxurious and reliable 2010 Lexus IS 250 in White with 90,316 miles. Interior is clean, some minor scuffs on the exterior. Smooth ride and packed with features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_13",
+        "title": "Used 2018 Lexus IS 250 (White)",
+        "category": "Cars",
+        "price": 16827,
+        "imageUrl": "https://platform.cstatic-images.com/xlarge/in/v2/stock_photos/d5360405-2044-4238-8823-354995642a87/2a23578b-45e5-4406-806e-d5253add395f.jpg",
+        "description": "A luxurious and reliable 2018 Lexus IS 250 in White with 45,429 miles. Interior is clean, some minor scuffs on the exterior. Smooth ride and packed with features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_14",
+        "title": "Used 2016 Lexus IS 250 (Black)",
+        "category": "Cars",
+        "price": 24231,
+        "imageUrl": "https://platform.cstatic-images.com/xlarge/in/v2/stock_photos/d5360405-2044-4238-8823-354995642a87/2a23578b-45e5-4406-806e-d5253add395f.jpg",
+        "description": "A luxurious and reliable 2016 Lexus IS 250 in Black with 90,469 miles. Interior is clean, some minor scuffs on the exterior. Smooth ride and packed with features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_15",
+        "title": "Used 2014 Lexus IS 250 (White)",
+        "category": "Cars",
+        "price": 15795,
+        "imageUrl": "https://platform.cstatic-images.com/xlarge/in/v2/stock_photos/d5360405-2044-4238-8823-354995642a87/2a23578b-45e5-4406-806e-d5253add395f.jpg",
+        "description": "A luxurious and reliable 2014 Lexus IS 250 in White with 40,687 miles. Interior is clean, some minor scuffs on the exterior. Smooth ride and packed with features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_16",
+        "title": "Used 2016 Lexus IS 250 (White)",
+        "category": "Cars",
+        "price": 21829,
+        "imageUrl": "https://platform.cstatic-images.com/xlarge/in/v2/stock_photos/d5360405-2044-4238-8823-354995642a87/2a23578b-45e5-4406-806e-d5253add395f.jpg",
+        "description": "A luxurious and reliable 2016 Lexus IS 250 in White with 118,654 miles. Interior is clean, some minor scuffs on the exterior. Smooth ride and packed with features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_17",
+        "title": "Used 2017 Lexus IS 250 (Red)",
+        "category": "Cars",
+        "price": 28558,
+        "imageUrl": "https://platform.cstatic-images.com/xlarge/in/v2/stock_photos/d5360405-2044-4238-8823-354995642a87/2a23578b-45e5-4406-806e-d5253add395f.jpg",
+        "description": "A luxurious and reliable 2017 Lexus IS 250 in Red with 78,251 miles. Interior is clean, some minor scuffs on the exterior. Smooth ride and packed with features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_18",
+        "title": "Used 2016 Lexus IS 250 (Blue)",
+        "category": "Cars",
+        "price": 21505,
+        "imageUrl": "https://platform.cstatic-images.com/xlarge/in/v2/stock_photos/d5360405-2044-4238-8823-354995642a87/2a23578b-45e5-4406-806e-d5253add395f.jpg",
+        "description": "A luxurious and reliable 2016 Lexus IS 250 in Blue with 43,030 miles. Interior is clean, some minor scuffs on the exterior. Smooth ride and packed with features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_19",
+        "title": "Used 2017 Lexus IS 250 (White)",
+        "category": "Cars",
+        "price": 23963,
+        "imageUrl": "https://platform.cstatic-images.com/xlarge/in/v2/stock_photos/d5360405-2044-4238-8823-354995642a87/2a23578b-45e5-4406-806e-d5253add395f.jpg",
+        "description": "A luxurious and reliable 2017 Lexus IS 250 in White with 102,541 miles. Interior is clean, some minor scuffs on the exterior. Smooth ride and packed with features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_20",
+        "title": "Used 2017 Porsche 911 (White)",
+        "category": "Cars",
+        "price": 72744,
+        "imageUrl": "https://i.gaw.to/vehicles/photos/40/23/402335-2021-porsche-911.jpg",
+        "description": "A legendary 2017 Porsche 911 in White with 69,652 miles. Meticulously maintained. Experience pure driving pleasure with this iconic sports car.",
+        "condition": "used"
+    },
+    {
+        "id": "car_21",
+        "title": "Used 2010 Porsche 911 (Red)",
+        "category": "Cars",
+        "price": 142884,
+        "imageUrl": "https://i.gaw.to/vehicles/photos/40/23/402335-2021-porsche-911.jpg",
+        "description": "A legendary 2010 Porsche 911 in Red with 74,376 miles. Meticulously maintained. Experience pure driving pleasure with this iconic sports car.",
+        "condition": "used"
+    },
+    {
+        "id": "car_22",
+        "title": "Used 2012 Porsche 911 (Silver)",
+        "category": "Cars",
+        "price": 116314,
+        "imageUrl": "https://i.gaw.to/vehicles/photos/40/23/402335-2021-porsche-911.jpg",
+        "description": "A legendary 2012 Porsche 911 in Silver with 66,866 miles. Meticulously maintained. Experience pure driving pleasure with this iconic sports car.",
+        "condition": "used"
+    },
+    {
+        "id": "car_23",
+        "title": "Used 2018 Porsche 911 (Black)",
+        "category": "Cars",
+        "price": 84249,
+        "imageUrl": "https://i.gaw.to/vehicles/photos/40/23/402335-2021-porsche-911.jpg",
+        "description": "A legendary 2018 Porsche 911 in Black with 73,913 miles. Meticulously maintained. Experience pure driving pleasure with this iconic sports car.",
+        "condition": "used"
+    },
+    {
+        "id": "car_24",
+        "title": "Used 2020 Porsche 911 (Red)",
+        "category": "Cars",
+        "price": 51103,
+        "imageUrl": "https://i.gaw.to/vehicles/photos/40/23/402335-2021-porsche-911.jpg",
+        "description": "A legendary 2020 Porsche 911 in Red with 22,082 miles. Meticulously maintained. Experience pure driving pleasure with this iconic sports car.",
+        "condition": "used"
+    },
+    {
+        "id": "car_25",
+        "title": "Used 2012 Porsche 911 (Yellow)",
+        "category": "Cars",
+        "price": 83189,
+        "imageUrl": "https://i.gaw.to/vehicles/photos/40/23/402335-2021-porsche-911.jpg",
+        "description": "A legendary 2012 Porsche 911 in Yellow with 50,440 miles. Meticulously maintained. Experience pure driving pleasure with this iconic sports car.",
+        "condition": "used"
+    },
+    {
+        "id": "car_26",
+        "title": "Used 2017 Porsche 911 (Silver)",
+        "category": "Cars",
+        "price": 71052,
+        "imageUrl": "https://i.gaw.to/vehicles/photos/40/23/402335-2021-porsche-911.jpg",
+        "description": "A legendary 2017 Porsche 911 in Silver with 23,264 miles. Meticulously maintained. Experience pure driving pleasure with this iconic sports car.",
+        "condition": "used"
+    },
+    {
+        "id": "car_27",
+        "title": "Used 2015 Porsche 911 (Red)",
+        "category": "Cars",
+        "price": 67307,
+        "imageUrl": "https://i.gaw.to/vehicles/photos/40/23/402335-2021-porsche-911.jpg",
+        "description": "A legendary 2015 Porsche 911 in Red with 68,051 miles. Meticulously maintained. Experience pure driving pleasure with this iconic sports car.",
+        "condition": "used"
+    },
+    {
+        "id": "car_28",
+        "title": "Used 2015 Porsche 911 (White)",
+        "category": "Cars",
+        "price": 133664,
+        "imageUrl": "https://i.gaw.to/vehicles/photos/40/23/402335-2021-porsche-911.jpg",
+        "description": "A legendary 2015 Porsche 911 in White with 22,904 miles. Meticulously maintained. Experience pure driving pleasure with this iconic sports car.",
+        "condition": "used"
+    },
+    {
+        "id": "car_29",
+        "title": "Used 2009 Porsche 911 (Silver)",
+        "category": "Cars",
+        "price": 136697,
+        "imageUrl": "https://i.gaw.to/vehicles/photos/40/23/402335-2021-porsche-911.jpg",
+        "description": "A legendary 2009 Porsche 911 in Silver with 39,044 miles. Meticulously maintained. Experience pure driving pleasure with this iconic sports car.",
+        "condition": "used"
+    },
+    {
+        "id": "car_30",
+        "title": "Used 2019 Tesla Model 3 (Midnight Silver)",
+        "category": "Cars",
+        "price": 31478,
+        "imageUrl": "https://i.ytimg.com/vi/t5Vp4i6g-bE/maxresdefault.jpg",
+        "description": "A cutting-edge 2019 Tesla Model 3 in Midnight Silver with 66,256 miles. Battery in excellent health. Enjoy the future of driving with long range and autopilot features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_31",
+        "title": "Used 2021 Tesla Model 3 (Black)",
+        "category": "Cars",
+        "price": 41187,
+        "imageUrl": "https://i.ytimg.com/vi/t5Vp4i6g-bE/maxresdefault.jpg",
+        "description": "A cutting-edge 2021 Tesla Model 3 in Black with 50,378 miles. Battery in excellent health. Enjoy the future of driving with long range and autopilot features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_32",
+        "title": "Used 2020 Tesla Model 3 (Midnight Silver)",
+        "category": "Cars",
+        "price": 43352,
+        "imageUrl": "https://i.ytimg.com/vi/t5Vp4i6g-bE/maxresdefault.jpg",
+        "description": "A cutting-edge 2020 Tesla Model 3 in Midnight Silver with 69,375 miles. Battery in excellent health. Enjoy the future of driving with long range and autopilot features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_33",
+        "title": "Used 2018 Tesla Model 3 (Midnight Silver)",
+        "category": "Cars",
+        "price": 32072,
+        "imageUrl": "https://i.ytimg.com/vi/t5Vp4i6g-bE/maxresdefault.jpg",
+        "description": "A cutting-edge 2018 Tesla Model 3 in Midnight Silver with 31,435 miles. Battery in excellent health. Enjoy the future of driving with long range and autopilot features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_34",
+        "title": "Used 2020 Tesla Model 3 (Midnight Silver)",
+        "category": "Cars",
+        "price": 38159,
+        "imageUrl": "https://i.ytimg.com/vi/t5Vp4i6g-bE/maxresdefault.jpg",
+        "description": "A cutting-edge 2020 Tesla Model 3 in Midnight Silver with 68,987 miles. Battery in excellent health. Enjoy the future of driving with long range and autopilot features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_35",
+        "title": "Used 2020 Tesla Model 3 (White)",
+        "category": "Cars",
+        "price": 43067,
+        "imageUrl": "https://i.ytimg.com/vi/t5Vp4i6g-bE/maxresdefault.jpg",
+        "description": "A cutting-edge 2020 Tesla Model 3 in White with 19,496 miles. Battery in excellent health. Enjoy the future of driving with long range and autopilot features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_36",
+        "title": "Used 2019 Tesla Model 3 (Black)",
+        "category": "Cars",
+        "price": 38106,
+        "imageUrl": "https://i.ytimg.com/vi/t5Vp4i6g-bE/maxresdefault.jpg",
+        "description": "A cutting-edge 2019 Tesla Model 3 in Black with 16,200 miles. Battery in excellent health. Enjoy the future of driving with long range and autopilot features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_37",
+        "title": "Used 2019 Tesla Model 3 (Midnight Silver)",
+        "category": "Cars",
+        "price": 39710,
+        "imageUrl": "https://i.ytimg.com/vi/t5Vp4i6g-bE/maxresdefault.jpg",
+        "description": "A cutting-edge 2019 Tesla Model 3 in Midnight Silver with 80,750 miles. Battery in excellent health. Enjoy the future of driving with long range and autopilot features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_38",
+        "title": "Used 2020 Tesla Model 3 (White)",
+        "category": "Cars",
+        "price": 41327,
+        "imageUrl": "https://i.ytimg.com/vi/t5Vp4i6g-bE/maxresdefault.jpg",
+        "description": "A cutting-edge 2020 Tesla Model 3 in White with 49,842 miles. Battery in excellent health. Enjoy the future of driving with long range and autopilot features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_39",
+        "title": "Used 2022 Tesla Model 3 (Blue)",
+        "category": "Cars",
+        "price": 33103,
+        "imageUrl": "https://i.ytimg.com/vi/t5Vp4i6g-bE/maxresdefault.jpg",
+        "description": "A cutting-edge 2022 Tesla Model 3 in Blue with 21,814 miles. Battery in excellent health. Enjoy the future of driving with long range and autopilot features.",
+        "condition": "used"
+    },
+    {
+        "id": "car_40",
+        "title": "Used 2021 Lexus RX 350 (Gray)",
+        "category": "Cars",
+        "price": 41355,
+        "imageUrl": "https://www.autotrader.com/wp-content/uploads/2020/02/2018-Lexus-RX-350L.jpg",
+        "description": "A spacious and comfortable 2021 Lexus RX 350 in Gray with 31,151 miles. Perfect for families, with a smooth ride and premium interior. Some light scratches on the rear bumper.",
+        "condition": "used"
+    },
+    {
+        "id": "car_41",
+        "title": "Used 2015 Lexus RX 350 (Gray)",
+        "category": "Cars",
+        "price": 44430,
+        "imageUrl": "https://www.autotrader.com/wp-content/uploads/2020/02/2018-Lexus-RX-350L.jpg",
+        "description": "A spacious and comfortable 2015 Lexus RX 350 in Gray with 44,537 miles. Perfect for families, with a smooth ride and premium interior. Some light scratches on the rear bumper.",
+        "condition": "used"
+    },
+    {
+        "id": "car_42",
+        "title": "Used 2018 Lexus RX 350 (White)",
+        "category": "Cars",
+        "price": 42850,
+        "imageUrl": "https://www.autotrader.com/wp-content/uploads/2020/02/2018-Lexus-RX-350L.jpg",
+        "description": "A spacious and comfortable 2018 Lexus RX 350 in White with 66,035 miles. Perfect for families, with a smooth ride and premium interior. Some light scratches on the rear bumper.",
+        "condition": "used"
+    },
+    {
+        "id": "car_43",
+        "title": "Used 2019 Lexus RX 350 (Champagne)",
+        "category": "Cars",
+        "price": 36928,
+        "imageUrl": "https://www.autotrader.com/wp-content/uploads/2020/02/2018-Lexus-RX-350L.jpg",
+        "description": "A spacious and comfortable 2019 Lexus RX 350 in Champagne with 78,253 miles. Perfect for families, with a smooth ride and premium interior. Some light scratches on the rear bumper.",
+        "condition": "used"
+    },
+    {
+        "id": "car_44",
+        "title": "Used 2015 Lexus RX 350 (Silver)",
+        "category": "Cars",
+        "price": 44858,
+        "imageUrl": "https://www.autotrader.com/wp-content/uploads/2020/02/2018-Lexus-RX-350L.jpg",
+        "description": "A spacious and comfortable 2015 Lexus RX 350 in Silver with 36,635 miles. Perfect for families, with a smooth ride and premium interior. Some light scratches on the rear bumper.",
+        "condition": "used"
+    },
+    {
+        "id": "car_45",
+        "title": "Used 2020 Lexus RX 350 (White)",
+        "category": "Cars",
+        "price": 42313,
+        "imageUrl": "https://www.autotrader.com/wp-content/uploads/2020/02/2018-Lexus-RX-350L.jpg",
+        "description": "A spacious and comfortable 2020 Lexus RX 350 in White with 26,477 miles. Perfect for families, with a smooth ride and premium interior. Some light scratches on the rear bumper.",
+        "condition": "used"
+    },
+    {
+        "id": "car_46",
+        "title": "Used 2020 Lexus RX 350 (Champagne)",
+        "category": "Cars",
+        "price": 30548,
+        "imageUrl": "https://www.autotrader.com/wp-content/uploads/2020/02/2018-Lexus-RX-350L.jpg",
+        "description": "A spacious and comfortable 2020 Lexus RX 350 in Champagne with 68,193 miles. Perfect for families, with a smooth ride and premium interior. Some light scratches on the rear bumper.",
+        "condition": "used"
+    },
+    {
+        "id": "car_47",
+        "title": "Used 2020 Lexus RX 350 (White)",
+        "category": "Cars",
+        "price": 34589,
+        "imageUrl": "https://www.autotrader.com/wp-content/uploads/2020/02/2018-Lexus-RX-350L.jpg",
+        "description": "A spacious and comfortable 2020 Lexus RX 350 in White with 93,602 miles. Perfect for families, with a smooth ride and premium interior. Some light scratches on the rear bumper.",
+        "condition": "used"
+    },
+    {
+        "id": "car_48",
+        "title": "Used 2018 Lexus RX 350 (Gray)",
+        "category": "Cars",
+        "price": 40016,
+        "imageUrl": "https://www.autotrader.com/wp-content/uploads/2020/02/2018-Lexus-RX-350L.jpg",
+        "description": "A spacious and comfortable 2018 Lexus RX 350 in Gray with 56,480 miles. Perfect for families, with a smooth ride and premium interior. Some light scratches on the rear bumper.",
+        "condition": "used"
+    },
+    {
+        "id": "car_49",
+        "title": "Used 2019 Lexus RX 350 (White)",
+        "category": "Cars",
+        "price": 29521,
+        "imageUrl": "https://www.autotrader.com/wp-content/uploads/2020/02/2018-Lexus-RX-350L.jpg",
+        "description": "A spacious and comfortable 2019 Lexus RX 350 in White with 68,345 miles. Perfect for families, with a smooth ride and premium interior. Some light scratches on the rear bumper.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_0",
+        "title": "Used 2018 Apple MacBook Pro",
+        "category": "Laptops",
+        "price": 1391,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2018 Apple MacBook Pro laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_1",
+        "title": "Used 2018 HP Spectre x360",
+        "category": "Laptops",
+        "price": 1688,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2018 HP Spectre x360 laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_2",
+        "title": "Used 2021 Lenovo XPS 15",
+        "category": "Laptops",
+        "price": 1058,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2021 Lenovo XPS 15 laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_3",
+        "title": "Used 2020 Lenovo Latitude 7490",
+        "category": "Laptops",
+        "price": 932,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2020 Lenovo Latitude 7490 laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_4",
+        "title": "Used 2022 Apple MacBook Pro",
+        "category": "Laptops",
+        "price": 2483,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2022 Apple MacBook Pro laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_5",
+        "title": "Used 2020 Dell ThinkPad X1 Carbon",
+        "category": "Laptops",
+        "price": 1693,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2020 Dell ThinkPad X1 Carbon laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_6",
+        "title": "Used 2020 Lenovo Spectre x360",
+        "category": "Laptops",
+        "price": 2240,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2020 Lenovo Spectre x360 laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_7",
+        "title": "Used 2018 Apple MacBook Pro",
+        "category": "Laptops",
+        "price": 1290,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2018 Apple MacBook Pro laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_8",
+        "title": "Used 2022 Apple MacBook Pro",
+        "category": "Laptops",
+        "price": 2129,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2022 Apple MacBook Pro laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_9",
+        "title": "Used 2021 Lenovo XPS 15",
+        "category": "Laptops",
+        "price": 1521,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2021 Lenovo XPS 15 laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_10",
+        "title": "Used 2018 Dell Latitude 7490",
+        "category": "Laptops",
+        "price": 1666,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2018 Dell Latitude 7490 laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_11",
+        "title": "Used 2020 Dell Latitude 7490",
+        "category": "Laptops",
+        "price": 1866,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2020 Dell Latitude 7490 laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_12",
+        "title": "Used 2019 Lenovo ThinkPad X1 Carbon",
+        "category": "Laptops",
+        "price": 1136,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2019 Lenovo ThinkPad X1 Carbon laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_13",
+        "title": "Used 2020 Apple MacBook Pro",
+        "category": "Laptops",
+        "price": 1120,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2020 Apple MacBook Pro laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_14",
+        "title": "Used 2019 HP Spectre x360",
+        "category": "Laptops",
+        "price": 1159,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2019 HP Spectre x360 laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_15",
+        "title": "Used 2021 Apple MacBook Pro",
+        "category": "Laptops",
+        "price": 2312,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2021 Apple MacBook Pro laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_16",
+        "title": "Used 2022 Dell ThinkPad X1 Carbon",
+        "category": "Laptops",
+        "price": 785,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2022 Dell ThinkPad X1 Carbon laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_17",
+        "title": "Used 2022 HP XPS 15",
+        "category": "Laptops",
+        "price": 710,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2022 HP XPS 15 laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_18",
+        "title": "Used 2020 Lenovo XPS 15",
+        "category": "Laptops",
+        "price": 2471,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2020 Lenovo XPS 15 laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "laptop_19",
+        "title": "Used 2019 HP XPS 15",
+        "category": "Laptops",
+        "price": 1410,
+        "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A powerful and portable 2019 HP XPS 15 laptop. Shows minor signs of use with a few light scratches on the lid, but the screen is in perfect condition. Ideal for work, school, or creative projects. Comes with a fresh OS install.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_0",
+        "title": "Used Custom Gaming PC - Intel Core i9 / AMD Radeon RX 6800 XT",
+        "category": "PC Builds",
+        "price": 2125,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i9 processor, AMD Radeon RX 6800 XT graphics card, and 16GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_1",
+        "title": "Used Custom Gaming PC - AMD Ryzen 9 / NVIDIA RTX 3070",
+        "category": "PC Builds",
+        "price": 3400,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 9 processor, NVIDIA RTX 3070 graphics card, and 16GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_2",
+        "title": "Used Custom Gaming PC - AMD Ryzen 7 / AMD Radeon RX 6800 XT",
+        "category": "PC Builds",
+        "price": 3945,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 7 processor, AMD Radeon RX 6800 XT graphics card, and 32GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_3",
+        "title": "Used Custom Gaming PC - Intel Core i9 / AMD Radeon RX 6800 XT",
+        "category": "PC Builds",
+        "price": 3437,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i9 processor, AMD Radeon RX 6800 XT graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_4",
+        "title": "Used Custom Gaming PC - Intel Core i9 / NVIDIA RTX 3080",
+        "category": "PC Builds",
+        "price": 2331,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i9 processor, NVIDIA RTX 3080 graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_5",
+        "title": "Used Custom Gaming PC - AMD Ryzen 9 / AMD Radeon RX 6800 XT",
+        "category": "PC Builds",
+        "price": 2830,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 9 processor, AMD Radeon RX 6800 XT graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_6",
+        "title": "Used Custom Gaming PC - AMD Ryzen 7 / NVIDIA RTX 3070",
+        "category": "PC Builds",
+        "price": 2180,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 7 processor, NVIDIA RTX 3070 graphics card, and 32GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_7",
+        "title": "Used Custom Gaming PC - Intel Core i9 / AMD Radeon RX 6800 XT",
+        "category": "PC Builds",
+        "price": 2419,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i9 processor, AMD Radeon RX 6800 XT graphics card, and 16GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_8",
+        "title": "Used Custom Gaming PC - AMD Ryzen 7 / NVIDIA RTX 3070",
+        "category": "PC Builds",
+        "price": 1947,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 7 processor, NVIDIA RTX 3070 graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_9",
+        "title": "Used Custom Gaming PC - AMD Ryzen 9 / NVIDIA RTX 3080",
+        "category": "PC Builds",
+        "price": 2262,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 9 processor, NVIDIA RTX 3080 graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_10",
+        "title": "Used Custom Gaming PC - AMD Ryzen 9 / NVIDIA RTX 3080",
+        "category": "PC Builds",
+        "price": 3798,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 9 processor, NVIDIA RTX 3080 graphics card, and 32GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_11",
+        "title": "Used Custom Gaming PC - Intel Core i9 / NVIDIA RTX 4070",
+        "category": "PC Builds",
+        "price": 1241,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i9 processor, NVIDIA RTX 4070 graphics card, and 32GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_12",
+        "title": "Used Custom Gaming PC - Intel Core i7 / NVIDIA RTX 3080",
+        "category": "PC Builds",
+        "price": 3092,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i7 processor, NVIDIA RTX 3080 graphics card, and 32GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_13",
+        "title": "Used Custom Gaming PC - AMD Ryzen 7 / AMD Radeon RX 6800 XT",
+        "category": "PC Builds",
+        "price": 1720,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 7 processor, AMD Radeon RX 6800 XT graphics card, and 32GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_14",
+        "title": "Used Custom Gaming PC - Intel Core i7 / NVIDIA RTX 3080",
+        "category": "PC Builds",
+        "price": 3324,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i7 processor, NVIDIA RTX 3080 graphics card, and 16GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_15",
+        "title": "Used Custom Gaming PC - AMD Ryzen 7 / AMD Radeon RX 6800 XT",
+        "category": "PC Builds",
+        "price": 2782,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 7 processor, AMD Radeon RX 6800 XT graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_16",
+        "title": "Used Custom Gaming PC - AMD Ryzen 9 / NVIDIA RTX 3070",
+        "category": "PC Builds",
+        "price": 2106,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 9 processor, NVIDIA RTX 3070 graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_17",
+        "title": "Used Custom Gaming PC - Intel Core i9 / NVIDIA RTX 3080",
+        "category": "PC Builds",
+        "price": 2380,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i9 processor, NVIDIA RTX 3080 graphics card, and 16GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_18",
+        "title": "Used Custom Gaming PC - AMD Ryzen 9 / NVIDIA RTX 3080",
+        "category": "PC Builds",
+        "price": 1386,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 9 processor, NVIDIA RTX 3080 graphics card, and 16GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_19",
+        "title": "Used Custom Gaming PC - AMD Ryzen 7 / NVIDIA RTX 4070",
+        "category": "PC Builds",
+        "price": 2025,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 7 processor, NVIDIA RTX 4070 graphics card, and 16GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_20",
+        "title": "Used Custom Gaming PC - AMD Ryzen 7 / NVIDIA RTX 3080",
+        "category": "PC Builds",
+        "price": 3667,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 7 processor, NVIDIA RTX 3080 graphics card, and 16GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_21",
+        "title": "Used Custom Gaming PC - AMD Ryzen 9 / AMD Radeon RX 6800 XT",
+        "category": "PC Builds",
+        "price": 3589,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 9 processor, AMD Radeon RX 6800 XT graphics card, and 16GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_22",
+        "title": "Used Custom Gaming PC - Intel Core i9 / NVIDIA RTX 3080",
+        "category": "PC Builds",
+        "price": 2877,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i9 processor, NVIDIA RTX 3080 graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_23",
+        "title": "Used Custom Gaming PC - AMD Ryzen 7 / NVIDIA RTX 3070",
+        "category": "PC Builds",
+        "price": 3537,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 7 processor, NVIDIA RTX 3070 graphics card, and 16GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_24",
+        "title": "Used Custom Gaming PC - Intel Core i7 / NVIDIA RTX 3080",
+        "category": "PC Builds",
+        "price": 2675,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i7 processor, NVIDIA RTX 3080 graphics card, and 32GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_25",
+        "title": "Used Custom Gaming PC - Intel Core i7 / NVIDIA RTX 3070",
+        "category": "PC Builds",
+        "price": 3027,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i7 processor, NVIDIA RTX 3070 graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_26",
+        "title": "Used Custom Gaming PC - Intel Core i7 / NVIDIA RTX 4070",
+        "category": "PC Builds",
+        "price": 3731,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i7 processor, NVIDIA RTX 4070 graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_27",
+        "title": "Used Custom Gaming PC - AMD Ryzen 9 / NVIDIA RTX 3070",
+        "category": "PC Builds",
+        "price": 2031,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 9 processor, NVIDIA RTX 3070 graphics card, and 32GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_28",
+        "title": "Used Custom Gaming PC - Intel Core i9 / NVIDIA RTX 3080",
+        "category": "PC Builds",
+        "price": 3973,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i9 processor, NVIDIA RTX 3080 graphics card, and 16GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_29",
+        "title": "Used Custom Gaming PC - Intel Core i7 / NVIDIA RTX 3070",
+        "category": "PC Builds",
+        "price": 3279,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i7 processor, NVIDIA RTX 3070 graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_30",
+        "title": "Used Custom Gaming PC - AMD Ryzen 9 / NVIDIA RTX 4070",
+        "category": "PC Builds",
+        "price": 2093,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 9 processor, NVIDIA RTX 4070 graphics card, and 32GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_31",
+        "title": "Used Custom Gaming PC - AMD Ryzen 7 / NVIDIA RTX 4070",
+        "category": "PC Builds",
+        "price": 1907,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 7 processor, NVIDIA RTX 4070 graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_32",
+        "title": "Used Custom Gaming PC - AMD Ryzen 9 / AMD Radeon RX 6800 XT",
+        "category": "PC Builds",
+        "price": 2854,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 9 processor, AMD Radeon RX 6800 XT graphics card, and 32GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_33",
+        "title": "Used Custom Gaming PC - AMD Ryzen 7 / NVIDIA RTX 3070",
+        "category": "PC Builds",
+        "price": 1788,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 7 processor, NVIDIA RTX 3070 graphics card, and 32GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_34",
+        "title": "Used Custom Gaming PC - Intel Core i9 / NVIDIA RTX 3070",
+        "category": "PC Builds",
+        "price": 1561,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i9 processor, NVIDIA RTX 3070 graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_35",
+        "title": "Used Custom Gaming PC - AMD Ryzen 9 / NVIDIA RTX 3080",
+        "category": "PC Builds",
+        "price": 1463,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 9 processor, NVIDIA RTX 3080 graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_36",
+        "title": "Used Custom Gaming PC - AMD Ryzen 7 / NVIDIA RTX 4070",
+        "category": "PC Builds",
+        "price": 2843,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 7 processor, NVIDIA RTX 4070 graphics card, and 16GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_37",
+        "title": "Used Custom Gaming PC - AMD Ryzen 9 / NVIDIA RTX 4070",
+        "category": "PC Builds",
+        "price": 3778,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 9 processor, NVIDIA RTX 4070 graphics card, and 16GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_38",
+        "title": "Used Custom Gaming PC - AMD Ryzen 7 / NVIDIA RTX 3070",
+        "category": "PC Builds",
+        "price": 1345,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 7 processor, NVIDIA RTX 3070 graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_39",
+        "title": "Used Custom Gaming PC - AMD Ryzen 9 / AMD Radeon RX 6800 XT",
+        "category": "PC Builds",
+        "price": 2363,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 9 processor, AMD Radeon RX 6800 XT graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_40",
+        "title": "Used Custom Gaming PC - AMD Ryzen 7 / NVIDIA RTX 3080",
+        "category": "PC Builds",
+        "price": 1604,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 7 processor, NVIDIA RTX 3080 graphics card, and 32GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_41",
+        "title": "Used Custom Gaming PC - Intel Core i9 / NVIDIA RTX 3080",
+        "category": "PC Builds",
+        "price": 1451,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i9 processor, NVIDIA RTX 3080 graphics card, and 16GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_42",
+        "title": "Used Custom Gaming PC - AMD Ryzen 9 / NVIDIA RTX 4070",
+        "category": "PC Builds",
+        "price": 2224,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 9 processor, NVIDIA RTX 4070 graphics card, and 32GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_43",
+        "title": "Used Custom Gaming PC - AMD Ryzen 7 / AMD Radeon RX 6800 XT",
+        "category": "PC Builds",
+        "price": 3648,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 7 processor, AMD Radeon RX 6800 XT graphics card, and 32GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_44",
+        "title": "Used Custom Gaming PC - Intel Core i7 / NVIDIA RTX 4070",
+        "category": "PC Builds",
+        "price": 1663,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i7 processor, NVIDIA RTX 4070 graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_45",
+        "title": "Used Custom Gaming PC - Intel Core i7 / AMD Radeon RX 6800 XT",
+        "category": "PC Builds",
+        "price": 3735,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i7 processor, AMD Radeon RX 6800 XT graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_46",
+        "title": "Used Custom Gaming PC - Intel Core i9 / NVIDIA RTX 4070",
+        "category": "PC Builds",
+        "price": 3886,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i9 processor, NVIDIA RTX 4070 graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_47",
+        "title": "Used Custom Gaming PC - AMD Ryzen 9 / NVIDIA RTX 4070",
+        "category": "PC Builds",
+        "price": 3172,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 9 processor, NVIDIA RTX 4070 graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_48",
+        "title": "Used Custom Gaming PC - Intel Core i7 / NVIDIA RTX 4070",
+        "category": "PC Builds",
+        "price": 2440,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a Intel Core i7 processor, NVIDIA RTX 4070 graphics card, and 16GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "pc_49",
+        "title": "Used Custom Gaming PC - AMD Ryzen 7 / NVIDIA RTX 3080",
+        "category": "PC Builds",
+        "price": 2360,
+        "imageUrl": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A high-performance custom gaming PC featuring a AMD Ryzen 7 processor, NVIDIA RTX 3080 graphics card, and 64GB of RAM. Case has a few minor scuffs. Ready for 4K gaming and streaming.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_0",
+        "title": "Used Logitech Mechanical Keyboard (Gateron Red switches)",
+        "category": "Keyboards",
+        "price": 99,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Logitech mechanical keyboard with Gateron Red switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_1",
+        "title": "Used Keychron Mechanical Keyboard (Gateron Red switches)",
+        "category": "Keyboards",
+        "price": 154,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Keychron mechanical keyboard with Gateron Red switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_2",
+        "title": "Used Corsair Mechanical Keyboard (Cherry MX Brown switches)",
+        "category": "Keyboards",
+        "price": 152,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Corsair mechanical keyboard with Cherry MX Brown switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_3",
+        "title": "Used Corsair Mechanical Keyboard (Gateron Red switches)",
+        "category": "Keyboards",
+        "price": 181,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Corsair mechanical keyboard with Gateron Red switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_4",
+        "title": "Used Logitech Mechanical Keyboard (Razer Green switches)",
+        "category": "Keyboards",
+        "price": 185,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Logitech mechanical keyboard with Razer Green switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_5",
+        "title": "Used Keychron Mechanical Keyboard (Cherry MX Brown switches)",
+        "category": "Keyboards",
+        "price": 177,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Keychron mechanical keyboard with Cherry MX Brown switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_6",
+        "title": "Used Razer Mechanical Keyboard (Gateron Red switches)",
+        "category": "Keyboards",
+        "price": 186,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Razer mechanical keyboard with Gateron Red switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_7",
+        "title": "Used Corsair Mechanical Keyboard (Cherry MX Brown switches)",
+        "category": "Keyboards",
+        "price": 121,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Corsair mechanical keyboard with Cherry MX Brown switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_8",
+        "title": "Used Corsair Mechanical Keyboard (Gateron Red switches)",
+        "category": "Keyboards",
+        "price": 232,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Corsair mechanical keyboard with Gateron Red switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_9",
+        "title": "Used Razer Mechanical Keyboard (Cherry MX Brown switches)",
+        "category": "Keyboards",
+        "price": 221,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Razer mechanical keyboard with Cherry MX Brown switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_10",
+        "title": "Used Razer Mechanical Keyboard (Razer Green switches)",
+        "category": "Keyboards",
+        "price": 226,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Razer mechanical keyboard with Razer Green switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_11",
+        "title": "Used Logitech Mechanical Keyboard (Razer Green switches)",
+        "category": "Keyboards",
+        "price": 121,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Logitech mechanical keyboard with Razer Green switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_12",
+        "title": "Used Razer Mechanical Keyboard (Razer Green switches)",
+        "category": "Keyboards",
+        "price": 250,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Razer mechanical keyboard with Razer Green switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_13",
+        "title": "Used Corsair Mechanical Keyboard (Gateron Red switches)",
+        "category": "Keyboards",
+        "price": 208,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Corsair mechanical keyboard with Gateron Red switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_14",
+        "title": "Used Razer Mechanical Keyboard (Cherry MX Brown switches)",
+        "category": "Keyboards",
+        "price": 233,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Razer mechanical keyboard with Cherry MX Brown switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_15",
+        "title": "Used Logitech Mechanical Keyboard (Gateron Red switches)",
+        "category": "Keyboards",
+        "price": 100,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Logitech mechanical keyboard with Gateron Red switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_16",
+        "title": "Used Keychron Mechanical Keyboard (Cherry MX Brown switches)",
+        "category": "Keyboards",
+        "price": 207,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Keychron mechanical keyboard with Cherry MX Brown switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_17",
+        "title": "Used Razer Mechanical Keyboard (Cherry MX Brown switches)",
+        "category": "Keyboards",
+        "price": 153,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Razer mechanical keyboard with Cherry MX Brown switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_18",
+        "title": "Used Logitech Mechanical Keyboard (Cherry MX Blue switches)",
+        "category": "Keyboards",
+        "price": 181,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Logitech mechanical keyboard with Cherry MX Blue switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_19",
+        "title": "Used Corsair Mechanical Keyboard (Gateron Red switches)",
+        "category": "Keyboards",
+        "price": 200,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Corsair mechanical keyboard with Gateron Red switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_20",
+        "title": "Used Logitech Mechanical Keyboard (Cherry MX Blue switches)",
+        "category": "Keyboards",
+        "price": 92,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Logitech mechanical keyboard with Cherry MX Blue switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_21",
+        "title": "Used Keychron Mechanical Keyboard (Razer Green switches)",
+        "category": "Keyboards",
+        "price": 219,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Keychron mechanical keyboard with Razer Green switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_22",
+        "title": "Used Logitech Mechanical Keyboard (Razer Green switches)",
+        "category": "Keyboards",
+        "price": 198,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Logitech mechanical keyboard with Razer Green switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_23",
+        "title": "Used Ducky Mechanical Keyboard (Razer Green switches)",
+        "category": "Keyboards",
+        "price": 217,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Ducky mechanical keyboard with Razer Green switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_24",
+        "title": "Used Corsair Mechanical Keyboard (Cherry MX Brown switches)",
+        "category": "Keyboards",
+        "price": 207,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Corsair mechanical keyboard with Cherry MX Brown switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_25",
+        "title": "Used Keychron Mechanical Keyboard (Razer Green switches)",
+        "category": "Keyboards",
+        "price": 168,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Keychron mechanical keyboard with Razer Green switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_26",
+        "title": "Used Razer Mechanical Keyboard (Razer Green switches)",
+        "category": "Keyboards",
+        "price": 105,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Razer mechanical keyboard with Razer Green switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_27",
+        "title": "Used Corsair Mechanical Keyboard (Cherry MX Brown switches)",
+        "category": "Keyboards",
+        "price": 212,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Corsair mechanical keyboard with Cherry MX Brown switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_28",
+        "title": "Used Ducky Mechanical Keyboard (Cherry MX Blue switches)",
+        "category": "Keyboards",
+        "price": 216,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Ducky mechanical keyboard with Cherry MX Blue switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "keyboard_29",
+        "title": "Used Razer Mechanical Keyboard (Gateron Red switches)",
+        "category": "Keyboards",
+        "price": 192,
+        "imageUrl": "https://images.unsplash.com/photo-1618384887924-3366ab1bc427?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "A tactile and responsive Razer mechanical keyboard with Gateron Red switches. Some shine on the keycaps from normal use. Features customizable RGB backlighting.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_0",
+        "title": "Used Logitech Arctis 7 Gaming Headset",
+        "category": "Headsets",
+        "price": 239,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Logitech Arctis 7 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_1",
+        "title": "Used SteelSeries Arctis 7 Gaming Headset",
+        "category": "Headsets",
+        "price": 383,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the SteelSeries Arctis 7 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_2",
+        "title": "Used Razer DT 990 Pro Gaming Headset",
+        "category": "Headsets",
+        "price": 233,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Razer DT 990 Pro headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_3",
+        "title": "Used Razer G Pro X Gaming Headset",
+        "category": "Headsets",
+        "price": 246,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Razer G Pro X headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_4",
+        "title": "Used Sennheiser Arctis 7 Gaming Headset",
+        "category": "Headsets",
+        "price": 376,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Sennheiser Arctis 7 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_5",
+        "title": "Used SteelSeries DT 990 Pro Gaming Headset",
+        "category": "Headsets",
+        "price": 106,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the SteelSeries DT 990 Pro headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_6",
+        "title": "Used SteelSeries DT 990 Pro Gaming Headset",
+        "category": "Headsets",
+        "price": 278,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the SteelSeries DT 990 Pro headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_7",
+        "title": "Used Sennheiser BlackShark V2 Gaming Headset",
+        "category": "Headsets",
+        "price": 197,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Sennheiser BlackShark V2 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_8",
+        "title": "Used Sennheiser Arctis 7 Gaming Headset",
+        "category": "Headsets",
+        "price": 106,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Sennheiser Arctis 7 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_9",
+        "title": "Used Logitech HD 660 S Gaming Headset",
+        "category": "Headsets",
+        "price": 266,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Logitech HD 660 S headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_10",
+        "title": "Used Sennheiser Arctis 7 Gaming Headset",
+        "category": "Headsets",
+        "price": 335,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Sennheiser Arctis 7 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_11",
+        "title": "Used SteelSeries DT 990 Pro Gaming Headset",
+        "category": "Headsets",
+        "price": 139,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the SteelSeries DT 990 Pro headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_12",
+        "title": "Used Sennheiser HD 660 S Gaming Headset",
+        "category": "Headsets",
+        "price": 279,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Sennheiser HD 660 S headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_13",
+        "title": "Used Logitech DT 990 Pro Gaming Headset",
+        "category": "Headsets",
+        "price": 280,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Logitech DT 990 Pro headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_14",
+        "title": "Used Sennheiser Arctis 7 Gaming Headset",
+        "category": "Headsets",
+        "price": 205,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Sennheiser Arctis 7 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_15",
+        "title": "Used SteelSeries BlackShark V2 Gaming Headset",
+        "category": "Headsets",
+        "price": 289,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the SteelSeries BlackShark V2 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_16",
+        "title": "Used SteelSeries DT 990 Pro Gaming Headset",
+        "category": "Headsets",
+        "price": 242,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the SteelSeries DT 990 Pro headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_17",
+        "title": "Used Logitech DT 990 Pro Gaming Headset",
+        "category": "Headsets",
+        "price": 147,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Logitech DT 990 Pro headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_18",
+        "title": "Used Sennheiser DT 990 Pro Gaming Headset",
+        "category": "Headsets",
+        "price": 295,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Sennheiser DT 990 Pro headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_19",
+        "title": "Used SteelSeries HD 660 S Gaming Headset",
+        "category": "Headsets",
+        "price": 275,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the SteelSeries HD 660 S headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_20",
+        "title": "Used Sennheiser DT 990 Pro Gaming Headset",
+        "category": "Headsets",
+        "price": 225,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Sennheiser DT 990 Pro headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_21",
+        "title": "Used Beyerdynamic BlackShark V2 Gaming Headset",
+        "category": "Headsets",
+        "price": 327,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Beyerdynamic BlackShark V2 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_22",
+        "title": "Used Sennheiser Arctis 7 Gaming Headset",
+        "category": "Headsets",
+        "price": 357,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Sennheiser Arctis 7 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_23",
+        "title": "Used Sennheiser BlackShark V2 Gaming Headset",
+        "category": "Headsets",
+        "price": 160,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Sennheiser BlackShark V2 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_24",
+        "title": "Used Logitech G Pro X Gaming Headset",
+        "category": "Headsets",
+        "price": 246,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Logitech G Pro X headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_25",
+        "title": "Used Razer BlackShark V2 Gaming Headset",
+        "category": "Headsets",
+        "price": 312,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Razer BlackShark V2 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_26",
+        "title": "Used Razer Arctis 7 Gaming Headset",
+        "category": "Headsets",
+        "price": 130,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Razer Arctis 7 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_27",
+        "title": "Used Razer Arctis 7 Gaming Headset",
+        "category": "Headsets",
+        "price": 397,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Razer Arctis 7 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_28",
+        "title": "Used Beyerdynamic G Pro X Gaming Headset",
+        "category": "Headsets",
+        "price": 111,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Beyerdynamic G Pro X headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_29",
+        "title": "Used SteelSeries BlackShark V2 Gaming Headset",
+        "category": "Headsets",
+        "price": 370,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the SteelSeries BlackShark V2 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_30",
+        "title": "Used Razer BlackShark V2 Gaming Headset",
+        "category": "Headsets",
+        "price": 129,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Razer BlackShark V2 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_31",
+        "title": "Used Sennheiser HD 660 S Gaming Headset",
+        "category": "Headsets",
+        "price": 290,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Sennheiser HD 660 S headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_32",
+        "title": "Used Beyerdynamic HD 660 S Gaming Headset",
+        "category": "Headsets",
+        "price": 221,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Beyerdynamic HD 660 S headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_33",
+        "title": "Used SteelSeries G Pro X Gaming Headset",
+        "category": "Headsets",
+        "price": 388,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the SteelSeries G Pro X headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_34",
+        "title": "Used Logitech G Pro X Gaming Headset",
+        "category": "Headsets",
+        "price": 268,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Logitech G Pro X headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_35",
+        "title": "Used Sennheiser G Pro X Gaming Headset",
+        "category": "Headsets",
+        "price": 142,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Sennheiser G Pro X headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_36",
+        "title": "Used Sennheiser HD 660 S Gaming Headset",
+        "category": "Headsets",
+        "price": 296,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Sennheiser HD 660 S headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_37",
+        "title": "Used SteelSeries HD 660 S Gaming Headset",
+        "category": "Headsets",
+        "price": 299,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the SteelSeries HD 660 S headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_38",
+        "title": "Used Beyerdynamic Arctis 7 Gaming Headset",
+        "category": "Headsets",
+        "price": 152,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Beyerdynamic Arctis 7 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_39",
+        "title": "Used Sennheiser DT 990 Pro Gaming Headset",
+        "category": "Headsets",
+        "price": 141,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Sennheiser DT 990 Pro headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_40",
+        "title": "Used Logitech G Pro X Gaming Headset",
+        "category": "Headsets",
+        "price": 233,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Logitech G Pro X headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_41",
+        "title": "Used Beyerdynamic HD 660 S Gaming Headset",
+        "category": "Headsets",
+        "price": 206,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Beyerdynamic HD 660 S headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_42",
+        "title": "Used Logitech BlackShark V2 Gaming Headset",
+        "category": "Headsets",
+        "price": 125,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Logitech BlackShark V2 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_43",
+        "title": "Used SteelSeries Arctis 7 Gaming Headset",
+        "category": "Headsets",
+        "price": 390,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the SteelSeries Arctis 7 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_44",
+        "title": "Used Beyerdynamic HD 660 S Gaming Headset",
+        "category": "Headsets",
+        "price": 331,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Beyerdynamic HD 660 S headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_45",
+        "title": "Used Logitech BlackShark V2 Gaming Headset",
+        "category": "Headsets",
+        "price": 145,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Logitech BlackShark V2 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_46",
+        "title": "Used Logitech BlackShark V2 Gaming Headset",
+        "category": "Headsets",
+        "price": 367,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Logitech BlackShark V2 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_47",
+        "title": "Used Logitech G Pro X Gaming Headset",
+        "category": "Headsets",
+        "price": 224,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Logitech G Pro X headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_48",
+        "title": "Used Sennheiser BlackShark V2 Gaming Headset",
+        "category": "Headsets",
+        "price": 394,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the Sennheiser BlackShark V2 headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    },
+    {
+        "id": "headset_49",
+        "title": "Used SteelSeries G Pro X Gaming Headset",
+        "category": "Headsets",
+        "price": 219,
+        "imageUrl": "https://images.unsplash.com/photo-1618366712162-370297515550?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "description": "Immerse yourself in the game with the SteelSeries G Pro X headset. Earpads show some light wear but have been cleaned. Crystal-clear audio and a comfortable design for long gaming sessions.",
+        "condition": "used"
+    }
+]
