@@ -18,7 +18,7 @@ class GeminiClient:
     """
 
     def __init__(self):
-        self.model_name = "gemini-1.5-flash"  # Fast and cost-effective for MVP
+        self.model_name = "gemini-2.5-flash"
         self.model = genai.GenerativeModel(
             model_name=self.model_name,
             generation_config={

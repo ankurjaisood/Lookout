@@ -194,20 +194,24 @@ def _build_session_context(
 
     # Get active listings
     listings = crud.list_listings_by_session(db, session.id, active_only=True)
-    listing_infos = [
-        ListingInfo(
+    listing_infos = []
+    for listing in listings:
+        # Access listing_metadata via __dict__ to avoid SQLAlchemy MetaData collision
+        metadata_value = listing.__dict__.get('listing_metadata', {})
+        if not isinstance(metadata_value, dict):
+            metadata_value = {}
+
+        listing_infos.append(ListingInfo(
             id=listing.id,
             title=listing.title,
             url=listing.url,
             price=float(listing.price) if listing.price else None,
             currency=listing.currency,
             marketplace=listing.marketplace,
-            metadata=listing.listing_metadata,
+            listing_metadata=metadata_value,
             score=listing.score,
             rationale=listing.rationale
-        )
-        for listing in listings
-    ]
+        ))
 
     return SessionContext(
         user=UserInfo(id=user.id, locale="en-US", timezone="America/Los_Angeles"),
