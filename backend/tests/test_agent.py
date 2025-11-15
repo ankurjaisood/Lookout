@@ -209,6 +209,7 @@ class TestPromptBuilder:
                     currency="USD",
                     marketplace="Craigslist",
                     listing_metadata={"mileage": 78000},
+                    description="Clean title, 78k miles, manual transmission.",
                     score=None,
                     rationale=None
                 )
@@ -223,6 +224,7 @@ class TestPromptBuilder:
         assert "I want a reliable car" in text
         assert "2014 Mazda Miata" in text
         assert "13500" in text
+        assert "Clean title" in text
 
     def test_build_full_prompt(self):
         """Test building complete prompt"""

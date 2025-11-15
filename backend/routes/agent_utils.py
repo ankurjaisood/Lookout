@@ -2,7 +2,7 @@
 Shared helper functions for building agent context and processing actions.
 """
 from sqlalchemy.orm import Session as DBSession
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 import crud
 import models
 from agent.schemas import (
@@ -70,12 +70,14 @@ def process_agent_actions(
     actions: List[dict],
     agent_message_id: str,
     default_listing_id: Optional[str] = None,
-    available_listing_ids: Optional[List[str]] = None
+    available_listing_ids: Optional[List[str]] = None,
+    listing_contexts: Optional[Dict[str, Dict[str, Any]]] = None
 ):
     """
     Apply structured agent actions to the database.
     """
     available_listing_ids = available_listing_ids or []
+    listing_contexts = listing_contexts or {}
     last_evaluated_listing_id = None
     clarification_state_dirty = False
 
@@ -107,6 +109,12 @@ def process_agent_actions(
             if not listing_id and len(available_listing_ids) == 1:
                 listing_id = available_listing_ids[0]
 
+            if listing_id and _question_answered_by_context(
+                question_text,
+                listing_contexts.get(listing_id)
+            ):
+                continue
+
             clarification_message = crud.create_message(
                 db=db,
                 session_id=session_id,
@@ -125,3 +133,39 @@ def process_agent_actions(
 
     if clarification_state_dirty:
         crud.sync_session_clarification_state(db, session_id)
+
+
+def _question_answered_by_context(question_text: str, context: Optional[Dict[str, Any]]) -> bool:
+    """
+    Best-effort check whether a clarifying question is already addressed by listing metadata or description.
+    """
+    if not context:
+        return False
+
+    question_lower = question_text.lower()
+    metadata = context.get("listing_metadata") or {}
+    description = (context.get("description") or "").lower()
+
+    for key, value in metadata.items():
+        if value is None:
+            continue
+        key_lower = str(key).lower()
+        value_lower = str(value).lower()
+        if key_lower in question_lower and value_lower:
+            return True
+
+    keywords = [
+        "mile",
+        "mileage",
+        "accident",
+        "service",
+        "trim",
+        "condition",
+        "history",
+        "owner"
+    ]
+    for keyword in keywords:
+        if keyword in question_lower and keyword in description:
+            return True
+
+    return False

@@ -7,7 +7,7 @@ PATCH /api/sessions/{session_id}/listings/{listing_id} - mark as removed
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session as DBSession
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 from datetime import datetime
 from database import get_db
 import crud
@@ -19,7 +19,7 @@ from agent.schemas import (
     UserMessage as AgentUserMessage
 )
 from agent.service import AgentService
-from routes.agent_utils import build_session_context, process_agent_actions
+from routes.agent_utils import build_session_context, process_agent_actions, _question_answered_by_context
 
 router = APIRouter()
 
@@ -319,13 +319,71 @@ def _run_listing_evaluation(
         type="normal"
     )
 
+    listing_context_map = {
+        lst.id: {
+            "listing_metadata": lst.listing_metadata,
+            "description": lst.description
+        }
+        for lst in agent_context.listings
+    }
+
     process_agent_actions(
         db=db,
         session_id=session.id,
         actions=agent_response.actions,
         agent_message_id=agent_message.id,
         default_listing_id=listing.id,
-        available_listing_ids=[lst.id for lst in agent_context.listings]
+        available_listing_ids=[lst.id for lst in agent_context.listings],
+        listing_contexts=listing_context_map
     )
 
-    return crud.get_listing_by_id(db=db, listing_id=listing.id)
+    updated_listing = crud.get_listing_by_id(db=db, listing_id=listing.id)
+
+    _auto_resolve_listing_clarifications(
+        db=db,
+        session_id=session.id,
+        listing=updated_listing,
+        listing_context=listing_context_map.get(listing.id)
+    )
+
+    return updated_listing
+
+
+def _auto_resolve_listing_clarifications(
+    db: DBSession,
+    session_id: str,
+    listing: Optional[models.Listing],
+    listing_context: Optional[Dict[str, Any]]
+):
+    """
+    Automatically mark pending clarifications as answered if the latest listing data covers them.
+    """
+    if not listing or not listing_context:
+        return
+
+    pending = crud.list_pending_clarifications_for_listing(
+        db=db,
+        session_id=session_id,
+        listing_id=listing.id
+    )
+
+    resolved_any = False
+    for clarification in pending:
+        if _question_answered_by_context(clarification.text, listing_context):
+            auto_message = crud.create_message(
+                db=db,
+                session_id=session_id,
+                sender="agent",
+                text="Automatically resolved after recent listing update.",
+                type="normal"
+            )
+            crud.update_message_clarification(
+                db=db,
+                message_id=clarification.id,
+                clarification_status="answered",
+                answer_message_id=auto_message.id
+            )
+            resolved_any = True
+
+    if resolved_any:
+        crud.sync_session_clarification_state(db, session_id)
