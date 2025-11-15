@@ -19,6 +19,14 @@ function getDealLabel(score) {
   return 'Horrible deal';
 }
 
+function getScoreClass(score) {
+  if (score >= 81) return 'score-4';
+  if (score >= 61) return 'score-3';
+  if (score >= 41) return 'score-2';
+  if (score >= 21) return 'score-1';
+  return 'score-0';
+}
+
 export default function SessionDetailPage() {
   const { sessionId } = useParams();
   const navigate = useNavigate();
@@ -28,6 +36,7 @@ export default function SessionDetailPage() {
   const [session, setSession] = useState(null);
   const [listings, setListings] = useState([]);
   const [messages, setMessages] = useState([]);
+  const [chatOpen, setChatOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [requirementsDraft, setRequirementsDraft] = useState('');
   const [requirementsSaving, setRequirementsSaving] = useState(false);
@@ -373,7 +382,7 @@ export default function SessionDetailPage() {
               listings.map((listing) => {
                 const clarifications = listing.clarifications || [];
                 return (
-                  <div key={listing.id} className={`listing-card ${listing.score ? 'evaluated' : 'pending'}`}>
+                  <div key={listing.id} className={`listing-card ${listing.score ? 'evaluated' : 'pending'}`} data-score-class={listing.score ? getScoreClass(listing.score) : ''}>
                     <div className="listing-header">
                       <div className="listing-title-row">
                         <h3>{listing.title}</h3>
@@ -548,42 +557,42 @@ export default function SessionDetailPage() {
           </div>
         </div>
 
-        {/* Chat Section */}
-        <div className="chat-section">
-          <h2>Chat with Agent</h2>
+        {/* Chat Popup Button */}
+        <button className="chat-toggle-btn" onClick={() => setChatOpen(!chatOpen)}>
+          💬
+        </button>
 
-          {session.status === 'WAITING_FOR_CLARIFICATION' && (
-            <div className="clarification-notice">
-              ⚠️ The agent is waiting for your answer to continue
+        {/* Chat Popup */}
+        {chatOpen && (
+          <div className="chat-popup">
+            <div className="chat-popup-header">
+              <h3>Chat with Agent</h3>
+              <button onClick={() => setChatOpen(false)}>✕</button>
             </div>
-          )}
 
-          <div className="messages-container">
-            {messages.map((message) => (
-              <div key={message.id} className={`message ${message.sender}`}>
-                <div className="message-sender">{message.sender === 'user' ? 'You' : 'Agent'}</div>
-                <div className="message-text">{message.text}</div>
-                {message.type === 'clarification_question' && message.is_blocking && (
-                  <div className="question-badge">Clarifying Question</div>
-                )}
-              </div>
-            ))}
-            <div ref={chatEndRef} />
+            <div className="messages-container">
+              {messages.map((message) => (
+                <div key={message.id} className={`message ${message.sender}`}>
+                  <div className="message-text">{message.text}</div>
+                </div>
+              ))}
+              <div ref={chatEndRef} />
+            </div>
+
+            <form onSubmit={handleSendMessage} className="message-form">
+              <input
+                type="text"
+                placeholder="Ask the agent..."
+                value={messageText}
+                onChange={(e) => setMessageText(e.target.value)}
+                disabled={sending}
+              />
+              <button type="submit" disabled={sending || !messageText.trim()} className="btn-primary">
+                {sending ? '...' : '→'}
+              </button>
+            </form>
           </div>
-
-          <form onSubmit={handleSendMessage} className="message-form">
-            <input
-              type="text"
-              placeholder={session.status === 'WAITING_FOR_CLARIFICATION' ? 'Answer the question...' : 'Ask the agent about these listings...'}
-              value={messageText}
-              onChange={(e) => setMessageText(e.target.value)}
-              disabled={sending}
-            />
-            <button type="submit" disabled={sending || !messageText.trim()} className="btn-primary">
-              {sending ? 'Sending...' : 'Send'}
-            </button>
-          </form>
-        </div>
+        )}
       </div>
     </div>
   );
