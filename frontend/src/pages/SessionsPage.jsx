@@ -8,6 +8,7 @@ export default function SessionsPage() {
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('cars');
+  const [requirements, setRequirements] = useState('');
   const [loading, setLoading] = useState(true);
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -30,7 +31,12 @@ export default function SessionsPage() {
   const handleCreateSession = async (e) => {
     e.preventDefault();
     try {
-      const response = await sessionsAPI.create(title, category);
+      const normalizedRequirements = requirements.trim();
+      const response = await sessionsAPI.create(
+        title,
+        category,
+        normalizedRequirements ? normalizedRequirements : null
+      );
       navigate(`/sessions/${response.data.id}`);
     } catch (error) {
       console.error('Failed to create session:', error);
@@ -84,6 +90,12 @@ export default function SessionsPage() {
               <option value="furniture">Furniture</option>
               <option value="other">Other</option>
             </select>
+            <textarea
+              placeholder="Global requirements (e.g., manual transmission, hardtop, under 50k miles)"
+              value={requirements}
+              onChange={(e) => setRequirements(e.target.value)}
+              rows={3}
+            />
             <button type="submit" className="btn-primary">Create</button>
           </form>
         )}

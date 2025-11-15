@@ -23,11 +23,16 @@ export default function SessionDetailPage() {
   const { sessionId } = useParams();
   const navigate = useNavigate();
   const chatEndRef = useRef(null);
+  const previousMessageCountRef = useRef(0);
 
   const [session, setSession] = useState(null);
   const [listings, setListings] = useState([]);
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [requirementsDraft, setRequirementsDraft] = useState('');
+  const [requirementsSaving, setRequirementsSaving] = useState(false);
+  const [requirementsStatus, setRequirementsStatus] = useState(null);
+  const [reevaluatingListingIds, setReevaluatingListingIds] = useState(new Set());
 
   // Add listing form state
   const [showAddForm, setShowAddForm] = useState(false);
@@ -51,7 +56,16 @@ export default function SessionDetailPage() {
   }, [sessionId]);
 
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (session) {
+      setRequirementsDraft(session.requirements || '');
+    }
+  }, [session]);
+
+  useEffect(() => {
+    if (messages.length > previousMessageCountRef.current) {
+      chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+    previousMessageCountRef.current = messages.length;
   }, [messages]);
 
   const loadSessionState = async () => {
@@ -107,6 +121,43 @@ export default function SessionDetailPage() {
     }
   };
 
+  const handleSaveRequirements = async (e) => {
+    e.preventDefault();
+    setRequirementsSaving(true);
+    setRequirementsStatus(null);
+    try {
+      const normalized = requirementsDraft.trim();
+      await sessionsAPI.update(sessionId, { requirements: normalized ? normalized : null });
+      setRequirementsStatus('saved');
+      await loadSessionState();
+    } catch (error) {
+      console.error('Failed to update requirements:', error);
+      setRequirementsStatus('error');
+    } finally {
+      setRequirementsSaving(false);
+    }
+  };
+
+  const handleReevaluateListing = async (listingId) => {
+    setReevaluatingListingIds((prev) => {
+      const next = new Set(prev);
+      next.add(listingId);
+      return next;
+    });
+    try {
+      await listingsAPI.reevaluate(sessionId, listingId);
+      await loadSessionState();
+    } catch (error) {
+      console.error('Failed to re-evaluate listing:', error);
+    } finally {
+      setReevaluatingListingIds((prev) => {
+        const next = new Set(prev);
+        next.delete(listingId);
+        return next;
+      });
+    }
+  };
+
   if (loading) return <div className="loading">Loading session...</div>;
   if (!session) return <div className="error">Session not found</div>;
 
@@ -121,6 +172,32 @@ export default function SessionDetailPage() {
       </header>
 
       <div className="session-content">
+        <div className="requirements-section">
+          <h2>Session Requirements</h2>
+          <p className="requirements-hint">
+            Share the must-have criteria for this search. The agent will use these when evaluating listings.
+          </p>
+          <form onSubmit={handleSaveRequirements} className="requirements-form">
+            <textarea
+              value={requirementsDraft}
+              onChange={(e) => setRequirementsDraft(e.target.value)}
+              placeholder="Example: Manual transmission, factory hardtop, under 50k miles, service records required."
+              rows={3}
+            />
+            <div className="requirements-actions">
+              <button type="submit" className="btn-secondary" disabled={requirementsSaving}>
+                {requirementsSaving ? 'Saving...' : 'Save Requirements'}
+              </button>
+              {requirementsStatus === 'saved' && (
+                <span className="status-badge success">Saved</span>
+              )}
+              {requirementsStatus === 'error' && (
+                <span className="status-badge error">Failed to save</span>
+              )}
+            </div>
+          </form>
+        </div>
+
         {/* Listings Section */}
         <div className="listings-section">
           <div className="section-header">
@@ -175,11 +252,24 @@ export default function SessionDetailPage() {
               listings.map((listing) => (
                 <div key={listing.id} className={`listing-card ${listing.score ? 'evaluated' : 'pending'}`}>
                   <div className="listing-header">
-                    <h3>{listing.title}</h3>
-                    {listing.score !== null && (
+                    <div className="listing-title-row">
+                      <h3>{listing.title}</h3>
+                      <button
+                        type="button"
+                        className={`reevaluate-button ${reevaluatingListingIds.has(listing.id) ? 'spinning' : ''}`}
+                        onClick={() => handleReevaluateListing(listing.id)}
+                        disabled={reevaluatingListingIds.has(listing.id)}
+                        title="Re-evaluate this listing"
+                      >
+                        ⟳
+                      </button>
+                    </div>
+                    {listing.score !== null ? (
                       <span className={`deal-badge score-${Math.floor(listing.score / 20)}`}>
                         {getDealLabel(listing.score)}
                       </span>
+                    ) : (
+                      <span className="deal-badge pending-badge">Pending</span>
                     )}
                   </div>
 

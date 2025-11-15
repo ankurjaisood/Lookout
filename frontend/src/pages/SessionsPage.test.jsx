@@ -19,6 +19,7 @@ vi.mock('../services/api', () => ({
     list: vi.fn(),
     create: vi.fn(),
     delete: vi.fn(),
+    update: vi.fn(),
   },
 }));
 
@@ -156,12 +157,14 @@ describe('SessionsPage', () => {
     const categorySelect = screen.getByRole('combobox');
     const createButton = screen.getByRole('button', { name: /^create$/i });
 
+    const requirementsTextarea = screen.getByPlaceholderText(/global requirements/i);
     await user.type(titleInput, 'New Session');
     await user.selectOptions(categorySelect, 'laptops');
+    await user.type(requirementsTextarea, 'Manual only');
     await user.click(createButton);
 
     await waitFor(() => {
-      expect(api.sessionsAPI.create).toHaveBeenCalledWith('New Session', 'laptops');
+      expect(api.sessionsAPI.create).toHaveBeenCalledWith('New Session', 'laptops', 'Manual only');
     });
 
     expect(mockNavigate).toHaveBeenCalledWith('/sessions/session-3');

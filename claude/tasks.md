@@ -12,7 +12,7 @@ This document contains the prioritized task breakdown for implementing the Marke
 
 ## Implementation Progress
 
-**Last Updated**: 2025-11-15
+**Last Updated**: 2025-11-16
 
 - ✅ **Phase 0**: Project Setup & Infrastructure (4/4 tasks complete)
 - ✅ **Phase 1**: Database Layer (2/2 tasks complete)
@@ -22,8 +22,9 @@ This document contains the prioritized task breakdown for implementing the Marke
 - ✅ **Phase 5**: Frontend Implementation (7/7 tasks complete)
 - ✅ **Phase 6**: Testing & Quality (4/4 tasks complete)
 - ✅ **Phase 7**: Documentation & Polish (1/2 tasks complete - seed data optional)
+- ✅ **Phase 8**: Post-MVP Enhancements (1/1 tasks complete)
 
-**Overall Progress**: 30/31 tasks completed (97%) - MVP COMPLETE!
+**Overall Progress**: 32/32 tasks completed (100%) - MVP COMPLETE + Enhancements!
 
 ---
 
@@ -596,6 +597,24 @@ Unified endpoint for UI to fetch complete session state.
 
 ---
 
+## Phase 8: Post-MVP Enhancements
+
+### Task 8.1: Session Requirements & Manual Listing Re-evaluation
+**Priority**: P1  
+**Dependencies**: Phases 2-6
+
+**Acceptance Criteria**:
+- [x] Add session-level `requirements` field end-to-end (DB, CRUD, API, agent context)
+- [x] UI for creating and editing requirements (session creation + detail view)
+- [x] Manual listing re-evaluation endpoint (`POST /api/sessions/{session_id}/listings/{listing_id}/reevaluate`)
+- [x] Frontend control (reload icon with progress state) to trigger reevaluation
+- [x] New backend + frontend tests covering the endpoint and API client helpers
+- [x] Documentation updates (README, CLAUDE.md, design doc, changelog) explaining the workflow
+
+**Status**: ✅ COMPLETED
+
+---
+
 ## Priority Legend
 
 - **P0**: Blocking - must be completed before dependent tasks
@@ -613,6 +632,7 @@ Unified endpoint for UI to fetch complete session state.
 - Phase 5: 10-15 minutes (React UI components)
 - Phase 6: 3-5 minutes (basic tests)
 - Phase 7: 2-3 minutes (documentation)
+- Phase 8: 2-4 minutes (session requirements & manual reevaluation)
 
 **Total Estimated Time**: 30-50 minutes for working MVP
 

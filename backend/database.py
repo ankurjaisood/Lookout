@@ -1,7 +1,7 @@
 """
 Database configuration and session management
 """
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, inspect, text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from config import settings
@@ -36,3 +36,21 @@ def init_db():
     """
     import models  # Import models to register them
     Base.metadata.create_all(bind=engine)
+    _run_schema_migrations()
+
+
+def _run_schema_migrations():
+    """
+    Lightweight schema migrations for existing installations.
+    Currently ensures the sessions table has the requirements column.
+    """
+    inspector = inspect(engine)
+
+    try:
+        session_columns = [col["name"] for col in inspector.get_columns("sessions")]
+    except Exception:
+        return
+
+    if "requirements" not in session_columns:
+        with engine.begin() as conn:
+            conn.execute(text("ALTER TABLE sessions ADD COLUMN requirements TEXT"))

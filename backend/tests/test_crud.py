@@ -89,13 +89,15 @@ class TestSessionCRUD:
             db=db,
             user_id=user.id,
             title="Find a car",
-            category="cars"
+            category="cars",
+            requirements="Manual transmission preferred"
         )
 
         assert session.id is not None
         assert session.user_id == user.id
         assert session.title == "Find a car"
         assert session.category == "cars"
+        assert session.requirements == "Manual transmission preferred"
         assert session.status == "ACTIVE"
 
     def test_list_sessions_by_user(self, db):
@@ -144,6 +146,25 @@ class TestSessionCRUD:
 
         assert updated.status == "WAITING_FOR_CLARIFICATION"
         assert updated.pending_clarification_id == "test_id"
+
+    def test_update_session_requirements(self, db):
+        """Test updating session metadata"""
+        user = crud.create_user(db=db, email="test@example.com", password="password123")
+        session = crud.create_session(
+            db=db,
+            user_id=user.id,
+            title="Test",
+            category="cars",
+            requirements="Manual only"
+        )
+
+        updated = crud.update_session(
+            db=db,
+            session_id=session.id,
+            requirements="Manual, hardtop, under 50k miles"
+        )
+
+        assert updated.requirements == "Manual, hardtop, under 50k miles"
 
 
 class TestListingCRUD:

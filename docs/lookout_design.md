@@ -54,6 +54,7 @@ Non-goals (MVP):
 - Display ranked listings with score-derived labels and rationales.
 - Display chat messages and clarifying questions.
 - Allow users to remove listings from consideration.
+- Allow users to manually re-run an evaluation for any listing when details change.
 
 **Core Functional Requirements**
 
@@ -65,6 +66,7 @@ Non-goals (MVP):
 3. Within a session, the UI shall allow users to:
    - Add listings by entering title, price, URL, and optional metadata.
    - Remove listings from consideration.
+   - Manually trigger a re-evaluation for a specific listing.
    - Send free-form chat messages to the agent.
 4. The UI shall display:
    - The chat history for the session.
@@ -98,6 +100,7 @@ Non-goals (MVP):
    - User signup/login (email + password).
    - Session CRUD (create, list, delete).
    - Listing CRUD within a session (create, mark removed).
+   - Manual re-evaluation of a single listing (`POST /api/sessions/{session_id}/listings/{listing_id}/reevaluate`).
    - Posting user messages within a session.
    - Fetching session state for the UI (messages + active listings + scores).
 2. The back-end shall be the canonical store for:
@@ -450,4 +453,3 @@ This supports a single blocking clarifying question at a time while keeping the 
   using a fixed threshold mapping implemented in the UI/back-end code.
 
 This design keeps the data model simple while allowing clear, user-friendly deal quality indicators derived from a continuous internal score.
-

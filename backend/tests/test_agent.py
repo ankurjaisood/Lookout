@@ -188,7 +188,8 @@ class TestPromptBuilder:
                 id="session_123",
                 title="Find a car",
                 category="cars",
-                status="ACTIVE"
+                status="ACTIVE",
+                requirements="Manual transmission, under 50k miles"
             ),
             recent_messages=[
                 MessageInfo(
@@ -218,6 +219,7 @@ class TestPromptBuilder:
 
         assert "Find a car" in text
         assert "cars" in text
+        assert "Manual transmission, under 50k miles" in text
         assert "I want a reliable car" in text
         assert "2014 Mazda Miata" in text
         assert "13500" in text
@@ -230,7 +232,8 @@ class TestPromptBuilder:
                 id="session_123",
                 title="Find a car",
                 category="cars",
-                status="ACTIVE"
+                status="ACTIVE",
+                requirements=None
             ),
             recent_messages=[],
             listings=[]

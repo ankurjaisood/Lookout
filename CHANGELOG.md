@@ -12,6 +12,12 @@ This file tracks incremental implementation progress for the Marketplace Researc
 
 ## Implementation Progress
 
+### 2025-11-16 - Session Requirements + Manual Listing Re-evaluation ✅
+- Added user-facing session requirements editing in both create form and session detail view
+- Introduced per-listing "re-run evaluation" control backed by `POST /api/sessions/{session_id}/listings/{listing_id}/reevaluate`
+- Documented the new workflow in `README.md` and `docs/lookout_design.md`
+- Expanded automated tests (backend API + frontend service unit tests) to cover the new endpoint and UX hooks
+
 ### Phase 0: Project Setup & Infrastructure ✅
 - ✅ Task 0.1: Initialize Monorepo Structure
 - ✅ Task 0.2: Backend Python Environment Setup
