@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { sessionsAPI, listingsAPI, messagesAPI } from '../services/api';
+import { sessionsAPI, listingsAPI, messagesAPI, agentAPI } from '../services/api';
 
 const DEAL_LABELS = {
   0: 'Horrible deal',
@@ -43,6 +43,10 @@ export default function SessionDetailPage() {
   // Chat state
   const [messageText, setMessageText] = useState('');
   const [sending, setSending] = useState(false);
+
+  // eBay search state
+  const [ebaySearchQuery, setEbaySearchQuery] = useState('');
+  const [ebaySearchResults, setEbaySearchResults] = useState([]);
 
   useEffect(() => {
     loadSessionState();
@@ -107,6 +111,39 @@ export default function SessionDetailPage() {
     }
   };
 
+  const handleEbaySearch = async (e) => {
+    e.preventDefault();
+    if (!ebaySearchQuery.trim()) return;
+
+    console.log('Searching for:', ebaySearchQuery);
+    try {
+      const response = await agentAPI.searchEbay(ebaySearchQuery);
+      console.log('eBay search response:', response.data);
+      setEbaySearchResults(response.data);
+    } catch (error) {
+      console.error('Failed to search eBay:', error);
+    }
+  };
+
+  const handleAddEbayListing = async (item) => {
+    try {
+      await listingsAPI.create(sessionId, {
+        title: item.title,
+        url: item.item_url,
+        price: parseFloat(item.price.replace(/[^0-9.-]+/g,"")),
+        currency: 'USD',
+        marketplace: 'eBay',
+        metadata: {
+          image_url: item.image_url,
+        }
+      });
+      setEbaySearchResults([]);
+      loadSessionState();
+    } catch (error) {
+      console.error('Failed to add eBay listing:', error);
+    }
+  };
+
   if (loading) return <div className="loading">Loading session...</div>;
   if (!session) return <div className="error">Session not found</div>;
 
@@ -167,6 +204,40 @@ export default function SessionDetailPage() {
               <button type="submit" className="btn-primary">Add Listing</button>
             </form>
           )}
+
+          <div className="ebay-search-section">
+            <h3>Search on eBay</h3>
+            <form onSubmit={handleEbaySearch} className="ebay-search-form">
+              <input
+                type="text"
+                placeholder="e.g., 'used macbook pro'"
+                value={ebaySearchQuery}
+                onChange={(e) => setEbaySearchQuery(e.target.value)}
+              />
+              <button type="submit" className="btn-secondary">Search</button>
+            </form>
+            {ebaySearchResults.length > 0 && (
+              <div className="ebay-search-results">
+                <h4>Search Results</h4>
+                <div className="listings-grid">
+                  {ebaySearchResults.map((item, index) => (
+                    <div key={index} className="listing-card">
+                      <div className="listing-header">
+                        <img src={item.image_url} alt={item.title} className="listing-image" />
+                        <h3>{item.title}</h3>
+                      </div>
+                      <p className="listing-price">{item.price}</p>
+                      <a href={item.item_url} target="_blank" rel="noopener noreferrer" className="listing-url">
+                        View on eBay →
+                      </a>
+                      <button onClick={() => handleAddEbayListing(item)} className="btn-primary">Add to Session</button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {ebaySearchResults.length === 0 && !loading && <p>No results found.</p>}
+          </div>
 
           <div className="listings-grid">
             {listings.length === 0 ? (

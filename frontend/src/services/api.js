@@ -66,4 +66,10 @@ export const messagesAPI = {
     api.get(`/api/sessions/${sessionId}/messages`),
 };
 
+// Agent API
+export const agentAPI = {
+  searchEbay: (query) =>
+    api.get('/api/agent/ebay/search', { params: { query } }),
+};
+
 export default api;

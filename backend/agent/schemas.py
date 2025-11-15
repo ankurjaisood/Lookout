@@ -97,3 +97,11 @@ class AgentError(BaseModel):
 
 class AgentErrorResponse(BaseModel):
     error: AgentError
+
+
+class EbayListing(BaseModel):
+    title: str
+    price: str
+    image_url: str
+    item_url: str
+    category: str

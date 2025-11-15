@@ -1,0 +1,142 @@
+[
+    {
+        "title": "2018 Toyota Camry SE",
+        "price": "$18,500",
+        "image_url": "https://i.ebayimg.com/images/g/YQYAAOSwJjJlL2gX/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381123",
+        "category": "Used Cars"
+    },
+    {
+        "title": "2020 Honda Civic LX",
+        "price": "$19,000",
+        "image_url": "https://i.ebayimg.com/images/g/YQYAAOSwJjJlL2gX/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381124",
+        "category": "Used Cars"
+    },
+    {
+        "title": "Apple MacBook Pro 13.3-inch Laptop - 2.7GHz, 8GB RAM, 256GB SSD (2015)",
+        "price": "$250.00",
+        "image_url": "https://i.ebayimg.com/images/g/H~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381123",
+        "category": "Laptops"
+    },
+    {
+        "title": "Dell XPS 13 9310 13.4 inch FHD+ Laptop - Intel Core i7-1185G7, 16GB RAM, 512GB SSD",
+        "price": "$850.00",
+        "image_url": "https://i.ebayimg.com/images/g/s~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381124",
+        "category": "Laptops"
+    },
+    {
+        "title": "Apple iPhone 13 Pro Max - 256GB - Sierra Blue (Unlocked)",
+        "price": "$750.00",
+        "image_url": "https://i.ebayimg.com/images/g/s~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381125",
+        "category": "Smartphones"
+    },
+    {
+        "title": "Samsung Galaxy S22 Ultra 5G - 128GB - Phantom Black (Unlocked)",
+        "price": "$650.00",
+        "image_url": "https://i.ebayimg.com/images/g/s~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381126",
+        "category": "Smartphones"
+    },
+    {
+        "title": "Sony PlayStation 5 Console Disc Edition",
+        "price": "$450.00",
+        "image_url": "https://i.ebayimg.com/images/g/s~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381127",
+        "category": "Gaming Consoles"
+    },
+    {
+        "title": "Nintendo Switch with Neon Blue and Neon Red Joy‑Con",
+        "price": "$250.00",
+        "image_url": "https://i.ebayimg.com/images/g/s~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381128",
+        "category": "Gaming Consoles"
+    },
+    {
+        "title": "Canon EOS Rebel T7 DSLR Camera with 18-55mm Lens",
+        "price": "$400.00",
+        "image_url": "https://i.ebayimg.com/images/g/s~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381129",
+        "category": "Digital Cameras"
+    },
+    {
+        "title": "Sony Alpha a7 III Mirrorless Digital Camera (Body Only)",
+        "price": "$1,500.00",
+        "image_url": "https://i.ebayimg.com/images/g/s~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381130",
+        "category": "Digital Cameras"
+    },
+    {
+        "title": "LEGO Star Wars Millennium Falcon 75192",
+        "price": "$700.00",
+        "image_url": "https://i.ebayimg.com/images/g/s~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381131",
+        "category": "Lego Sets"
+    },
+    {
+        "title": "LEGO Ideas Ship in a Bottle 92177",
+        "price": "$100.00",
+        "image_url": "https://i.ebayimg.com/images/g/s~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381132",
+        "category": "Lego Sets"
+    },
+    {
+        "title": "Marvel Legends Series Iron Man Mark 85",
+        "price": "$40.00",
+        "image_url": "https://i.ebayimg.com/images/g/s~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381133",
+        "category": "Action Figures"
+    },
+    {
+        "title": "Star Wars The Black Series Darth Vader",
+        "price": "$30.00",
+        "image_url": "https://i.ebayimg.com/images/g/s~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381134",
+        "category": "Action Figures"
+    },
+    {
+        "title": "Nike Air Jordan 1 Retro High OG 'Chicago'",
+        "price": "$500.00",
+        "image_url": "https://i.ebayimg.com/images/g/s~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381135",
+        "category": "Men's Sneakers"
+    },
+    {
+        "title": "Adidas Yeezy Boost 350 V2 'Zebra'",
+        "price": "$300.00",
+        "image_url": "https://i.ebayimg.com/images/g/s~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381136",
+        "category": "Men's Sneakers"
+    },
+    {
+        "title": "Louis Vuitton Speedy 30 Monogram Canvas",
+        "price": "$1,200.00",
+        "image_url": "https://i.ebayimg.com/images/g/s~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381137",
+        "category": "Women's Handbags"
+    },
+    {
+        "title": "Chanel Classic Double Flap Bag Quilted Lambskin Medium",
+        "price": "$5,000.00",
+        "image_url": "https://i.ebayimg.com/images/g/s~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381138",
+        "category": "Women's Handbags"
+    },
+    {
+        "title": "Rolex Submariner Date 116610LN",
+        "price": "$12,000.00",
+        "image_url": "https://i.ebayimg.com/images/g/s~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381139",
+        "category": "Wristwatches"
+    },
+    {
+        "title": "Omega Speedmaster Professional Moonwatch",
+        "price": "$5,500.00",
+        "image_url": "https://i.ebayimg.com/images/g/s~MAAOSw-wZlTj~w/s-l1600.jpg",
+        "item_url": "https://www.ebay.com/itm/110529381140",
+        "category": "Wristwatches"
+    }
+]
