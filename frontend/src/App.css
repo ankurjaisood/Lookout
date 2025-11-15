@@ -1,0 +1,500 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.2rem;
+}
+
+.error {
+  color: #d32f2f;
+  padding: 1rem;
+}
+
+/* Buttons */
+button {
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: #1976d2;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #1565c0;
+}
+
+.btn-secondary {
+  background: #757575;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #616161;
+}
+
+.btn-danger {
+  background: #d32f2f;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #c62828;
+}
+
+.btn-back {
+  background: #e0e0e0;
+  color: #333;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Auth Pages */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.auth-container {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-container h1 {
+  text-align: center;
+  color: #1976d2;
+  margin: 0 0 0.5rem;
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin: 0 0 1.5rem;
+  color: #666;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input,
+.form-group select,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="number"],
+select {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #1976d2;
+}
+
+.error {
+  background: #ffebee;
+  color: #d32f2f;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.auth-link a {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Sessions Page */
+.sessions-page {
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+.page-header {
+  background: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-header h1 {
+  margin: 0;
+  color: #1976d2;
+}
+
+.user-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.sessions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.create-session-form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.create-session-form input {
+  flex: 1;
+}
+
+.sessions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.session-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.session-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.session-info {
+  flex: 1;
+  cursor: pointer;
+}
+
+.session-info h3 {
+  margin: 0 0 0.5rem;
+}
+
+.session-meta {
+  color: #757575;
+  font-size: 0.9rem;
+}
+
+.status-badge {
+  display: inline-block;
+  background: #ff9800;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.empty-state {
+  text-align: center;
+  color: #999;
+  padding: 3rem;
+}
+
+/* Session Detail Page */
+.session-detail-page {
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+.session-category {
+  color: #757575;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.session-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Listings */
+.listings-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.add-listing-form {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.price-group {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+}
+
+.listings-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.listing-card {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.listing-card.evaluated {
+  border-color: #1976d2;
+}
+
+.listing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 0.8rem;
+}
+
+.listing-header h3 {
+  margin: 0;
+  flex: 1;
+}
+
+.deal-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.deal-badge.score-0 { background: #d32f2f; color: white; }
+.deal-badge.score-1 { background: #f57c00; color: white; }
+.deal-badge.score-2 { background: #fbc02d; color: #333; }
+.deal-badge.score-3 { background: #689f38; color: white; }
+.deal-badge.score-4 { background: #388e3c; color: white; }
+
+.listing-price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1976d2;
+  margin: 0.5rem 0;
+}
+
+.listing-url {
+  color: #1976d2;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.listing-marketplace {
+  color: #757575;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.listing-evaluation {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.score-bar {
+  background: #e0e0e0;
+  border-radius: 20px;
+  height: 24px;
+  position: relative;
+  margin-bottom: 0.8rem;
+}
+
+.score-fill {
+  background: linear-gradient(90deg, #388e3c, #689f38);
+  height: 100%;
+  border-radius: 20px;
+  transition: width 0.3s;
+}
+
+.score-value {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.rationale {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.btn-remove {
+  background: #ffebee;
+  color: #d32f2f;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn-remove:hover {
+  background: #ffcdd2;
+}
+
+/* Chat */
+.chat-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  max-height: calc(100vh - 200px);
+}
+
+.clarification-notice {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  color: #856404;
+  padding: 0.8rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.messages-container {
+  flex: 1;
+  overflow-y: auto;
+  margin: 1rem 0;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.message {
+  padding: 0.8rem;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+.message.user {
+  background: #e3f2fd;
+  align-self: flex-end;
+}
+
+.message.agent {
+  background: #f5f5f5;
+  align-self: flex-start;
+}
+
+.message-sender {
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+  color: #555;
+}
+
+.message-text {
+  line-height: 1.5;
+}
+
+.question-badge {
+  background: #ff9800;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.message-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.message-form input {
+  flex: 1;
+}
