@@ -75,6 +75,7 @@ class Session(Base):
     user_id = Column(String, ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True)
     title = Column(String, nullable=False)
     category = Column(String, nullable=False)  # e.g. 'cars', 'laptops'
+    requirements = Column(Text, nullable=True)  # User-provided global requirements for the session
     status = Column(String, nullable=False, default="ACTIVE")  # ACTIVE | WAITING_FOR_CLARIFICATION | CLOSED
     pending_clarification_id = Column(String, ForeignKey("messages.id"), nullable=True)
     created_at = Column(TIMESTAMP, nullable=False, server_default=func.now())

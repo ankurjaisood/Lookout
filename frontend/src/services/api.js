@@ -29,8 +29,8 @@ export const authAPI = {
 
 // Sessions API
 export const sessionsAPI = {
-  create: (title, category) =>
-    api.post('/api/sessions', { title, category }),
+  create: (title, category, requirements) =>
+    api.post('/api/sessions', { title, category, requirements }),
 
   list: () =>
     api.get('/api/sessions'),
@@ -43,6 +43,9 @@ export const sessionsAPI = {
 
   getState: (sessionId) =>
     api.get(`/api/sessions/${sessionId}/state`),
+
+  update: (sessionId, updates) =>
+    api.patch(`/api/sessions/${sessionId}`, updates),
 };
 
 // Listings API
@@ -55,6 +58,9 @@ export const listingsAPI = {
 
   markRemoved: (sessionId, listingId) =>
     api.patch(`/api/sessions/${sessionId}/listings/${listingId}`),
+
+  reevaluate: (sessionId, listingId) =>
+    api.post(`/api/sessions/${sessionId}/listings/${listingId}/reevaluate`),
 };
 
 // Messages API

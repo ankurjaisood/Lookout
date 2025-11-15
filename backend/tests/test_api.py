@@ -9,6 +9,7 @@ from sqlalchemy.orm import sessionmaker
 from database import Base, get_db
 import models  # Import models to ensure they're registered with Base
 from main import app
+from agent.schemas import AgentResponse, AgentMessage
 
 
 # Test database setup
@@ -172,13 +173,18 @@ class TestSessionAPI:
         """Test creating a session"""
         response = authenticated_client.post(
             "/api/sessions",
-            json={"title": "Find a car", "category": "cars"}
+            json={
+                "title": "Find a car",
+                "category": "cars",
+                "requirements": "Manual transmission, under 50k miles"
+            }
         )
 
         assert response.status_code == 201
         data = response.json()
         assert data["title"] == "Find a car"
         assert data["category"] == "cars"
+        assert data["requirements"] == "Manual transmission, under 50k miles"
         assert data["status"] == "ACTIVE"
 
     def test_list_sessions(self, authenticated_client):
@@ -215,6 +221,24 @@ class TestSessionAPI:
         assert response.status_code == 200
         data = response.json()
         assert data["title"] == "Test Session"
+        assert data["requirements"] is None
+
+    def test_update_session_requirements(self, authenticated_client):
+        """Test updating session requirements"""
+        create_response = authenticated_client.post(
+            "/api/sessions",
+            json={"title": "Miata hunt", "category": "cars"}
+        )
+        session_id = create_response.json()["id"]
+
+        update_response = authenticated_client.patch(
+            f"/api/sessions/{session_id}",
+            json={"requirements": "Manual, hardtop, <50k miles"}
+        )
+
+        assert update_response.status_code == 200
+        data = update_response.json()
+        assert data["requirements"] == "Manual, hardtop, <50k miles"
 
     def test_delete_session(self, authenticated_client):
         """Test deleting a session"""
@@ -314,3 +338,44 @@ class TestListingAPI:
         assert response.status_code == 200
         data = response.json()
         assert data["status"] == "removed"
+
+    def test_reevaluate_listing(self, authenticated_client_with_session, monkeypatch):
+        """Test manual listing reevaluation triggers agent workflow"""
+        client = authenticated_client_with_session
+        session_id = client.session_id
+
+        # Create listing to evaluate
+        create_response = client.post(
+            f"/api/sessions/{session_id}/listings",
+            json={"title": "Reloadable Listing"}
+        )
+        listing_id = create_response.json()["id"]
+
+        def fake_process_request(self, request):
+            return AgentResponse(
+                agent_message=AgentMessage(text="Updated scores."),
+                actions=[
+                    {
+                        "type": "UPDATE_EVALUATIONS",
+                        "evaluations": [
+                            {
+                                "listing_id": listing_id,
+                                "score": 88,
+                                "rationale": "Manual refresh complete."
+                            }
+                        ]
+                    }
+                ]
+            )
+
+        monkeypatch.setattr(
+            "routes.listing_routes.AgentService.process_request",
+            fake_process_request
+        )
+
+        response = client.post(f"/api/sessions/{session_id}/listings/{listing_id}/reevaluate")
+
+        assert response.status_code == 200
+        data = response.json()
+        assert data["score"] == 88
+        assert "Manual refresh" in data["rationale"]

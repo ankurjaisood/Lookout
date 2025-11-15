@@ -22,6 +22,13 @@ router = APIRouter()
 class CreateSessionRequest(BaseModel):
     title: str
     category: str
+    requirements: Optional[str] = None
+
+
+class UpdateSessionRequest(BaseModel):
+    title: Optional[str] = None
+    category: Optional[str] = None
+    requirements: Optional[str] = None
 
 
 class SessionResponse(BaseModel):
@@ -29,6 +36,7 @@ class SessionResponse(BaseModel):
     user_id: str
     title: str
     category: str
+    requirements: Optional[str]
     status: str
     pending_clarification_id: Optional[str]
     created_at: datetime
@@ -87,7 +95,8 @@ async def create_session(
         db=db,
         user_id=current_user.id,
         title=request.title,
-        category=request.category
+        category=request.category,
+        requirements=request.requirements
     )
     return session
 
@@ -129,6 +138,47 @@ async def get_session(
         )
 
     return session
+
+
+@router.patch("/{session_id}", response_model=SessionResponse)
+async def update_session(
+    session_id: str,
+    request: UpdateSessionRequest,
+    db: DBSession = Depends(get_db),
+    current_user: models.User = Depends(get_current_user)
+):
+    """
+    Update session metadata (title, category, requirements)
+    """
+    session = crud.get_session_by_id(db=db, session_id=session_id)
+
+    if not session:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Session not found"
+        )
+
+    if session.user_id != current_user.id:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Not authorized to update this session"
+        )
+
+    updated = crud.update_session(
+        db=db,
+        session_id=session_id,
+        title=request.title,
+        category=request.category,
+        requirements=request.requirements
+    )
+
+    if not updated:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Session not found"
+        )
+
+    return updated
 
 
 @router.delete("/{session_id}", status_code=status.HTTP_204_NO_CONTENT)

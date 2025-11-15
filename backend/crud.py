@@ -100,12 +100,19 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
 
 # ============= Session CRUD =============
 
-def create_session(db: Session, user_id: str, title: str, category: str) -> models.Session:
+def create_session(
+    db: Session,
+    user_id: str,
+    title: str,
+    category: str,
+    requirements: Optional[str] = None
+) -> models.Session:
     """Create a new session"""
     db_session = models.Session(
         user_id=user_id,
         title=title,
         category=category,
+        requirements=requirements,
         status="ACTIVE"
     )
     db.add(db_session)
@@ -136,6 +143,30 @@ def delete_session(db: Session, session_id: str) -> bool:
         db.commit()
         return True
     return False
+
+
+def update_session(
+    db: Session,
+    session_id: str,
+    title: Optional[str] = None,
+    category: Optional[str] = None,
+    requirements: Optional[str] = None
+) -> Optional[models.Session]:
+    """Update session metadata fields"""
+    db_session = get_session_by_id(db, session_id)
+    if not db_session:
+        return None
+
+    if title is not None:
+        db_session.title = title
+    if category is not None:
+        db_session.category = category
+    if requirements is not None:
+        db_session.requirements = requirements
+
+    db.commit()
+    db.refresh(db_session)
+    return db_session
 
 
 def update_session_status(db: Session, session_id: str, status: str, pending_clarification_id: Optional[str] = None) -> Optional[models.Session]:

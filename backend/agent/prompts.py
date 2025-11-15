@@ -108,6 +108,9 @@ Always respond with valid JSON wrapped in ```json ... ```
         parts.append(f"Category: {context.session.category}")
         parts.append(f"Title: {context.session.title}")
         parts.append(f"Status: {context.session.status}")
+        if context.session.requirements:
+            parts.append("\n## Requirements")
+            parts.append(context.session.requirements.strip())
 
         # Recent messages (conversation history)
         if context.recent_messages:

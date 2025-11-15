@@ -22,6 +22,7 @@ The system has three main components in a clean separation of concerns:
 - Displays ranked listings with deal-quality labels
 - Chat interface for agent interaction
 - Handles blocking clarifying questions from the agent
+- Allows users to specify/edit session-level requirements and manually re-run a listing evaluation
 
 ### 2. Back-end API Service (backend/)
 - **Canonical data owner**: All users, sessions, messages, and listings data
@@ -44,7 +45,7 @@ The system has three main components in a clean separation of concerns:
 Five core tables in SQLite (see `docs/lookout_design.md` Section 4 for full schema):
 
 1. **users**: email, password_hash, display_name
-2. **sessions**: user_id, title, category, status (ACTIVE | WAITING_FOR_CLARIFICATION | CLOSED)
+2. **sessions**: user_id, title, category, requirements text, status (ACTIVE | WAITING_FOR_CLARIFICATION | CLOSED)
 3. **messages**: session_id, sender (user|agent), type (normal|clarification_question), is_blocking
 4. **listings**: session_id, title/url/price/metadata, status (active|removed), score (0-100), rationale
 5. **agent_memory**: key (user:{id} or session:{id}), type (user_preferences|session_summary), data (JSONB)
@@ -135,6 +136,7 @@ Key backend endpoints (FastAPI auto-docs at `/docs`):
 **Listings:**
 - POST/GET `/api/sessions/{session_id}/listings`
 - PATCH `/api/sessions/{session_id}/listings/{listing_id}` (mark removed)
+- POST `/api/sessions/{session_id}/listings/{listing_id}/reevaluate` (manual re-run of a single listing)
 
 **Messages:**
 - POST `/api/sessions/{session_id}/messages` (triggers agent call)
@@ -154,7 +156,7 @@ Key backend endpoints (FastAPI auto-docs at `/docs`):
 ## Implementation Reference
 
 See `claude/tasks.md` for complete task breakdown with:
-- 7 phases (27 tasks total)
+- 8 phases (32 tasks total, including post-MVP enhancements)
 - Priorities (P0-P3)
 - Dependencies and acceptance criteria
 - Estimated timeline: 30-50 minutes for AI-assisted development

@@ -18,6 +18,7 @@ class SessionInfo(BaseModel):
     title: str
     category: str
     status: str
+    requirements: Optional[str] = None
 
 
 class MessageInfo(BaseModel):

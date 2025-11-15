@@ -11,6 +11,8 @@ Lookout combines a React frontend, FastAPI backend, and Google Gemini AI to prov
 - **AI-Powered Evaluation**: Get 0-100 scores and detailed rationales for each listing
 - **Smart Questions**: Agent asks clarifying questions only when needed
 - **Preference Learning**: System remembers your preferences across sessions
+- **Session Requirements**: Capture must-have criteria once per session and let the agent enforce them
+- **Manual Re-evaluation**: Re-run the agent on any listing with a single click when details change
 - **Real-time Chat**: Interactive conversation with the AI agent
 - **Session Management**: Organize your searches by category
 - **Deal Quality Labels**: Clear "horrible/poor/fair/good/great deal" indicators
@@ -84,6 +86,7 @@ The application will be available at:
 - Click "New Session"
 - Give it a title (e.g., "Find a used Miata")
 - Select a category (cars, laptops, electronics, etc.)
+- Add your global requirements (e.g., "manual transmission, hardtop, under 50k miles") so the agent keeps them in mind for every listing
 
 ### 3. Add Listings
 
@@ -111,6 +114,11 @@ Each listing shows:
 - **Score Visualization**: 0-100 score with progress bar
 - **Rationale**: Detailed explanation of the score
 - **Quick Actions**: View listing, remove from consideration
+
+### 6. Re-evaluate a Listing
+
+- Hover over the listing title and click the ⟳ button to ask the agent to re-check just that item
+- The listing’s score and rationale refresh after the agent responds
 
 ## Manual Setup (if scripts fail)
 

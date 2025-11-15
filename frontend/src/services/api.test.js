@@ -79,7 +79,7 @@ describe('API Service', () => {
   });
 
   describe('sessionsAPI', () => {
-    it('should create session with title and category', async () => {
+    it('should create session with requirements data', async () => {
       const mockResponse = { data: { id: 'session-123' } };
       const mockPost = vi.fn().mockResolvedValue(mockResponse);
       axios.create = vi.fn(() => ({
@@ -88,11 +88,12 @@ describe('API Service', () => {
 
       const { sessionsAPI: freshSessionsAPI } = await import('./api?update=' + Date.now());
 
-      await freshSessionsAPI.create('My Session', 'cars');
+      await freshSessionsAPI.create('My Session', 'cars', 'Manual only');
 
       expect(mockPost).toHaveBeenCalledWith('/api/sessions', {
         title: 'My Session',
         category: 'cars',
+        requirements: 'Manual only',
       });
     });
 
@@ -151,6 +152,22 @@ describe('API Service', () => {
 
       expect(mockGet).toHaveBeenCalledWith('/api/sessions/session-123/state');
     });
+
+    it('should update session with payload', async () => {
+      const mockResponse = { data: { id: 'session-123' } };
+      const mockPatch = vi.fn().mockResolvedValue(mockResponse);
+      axios.create = vi.fn(() => ({
+        patch: mockPatch,
+      }));
+
+      const { sessionsAPI: freshSessionsAPI } = await import('./api?update=' + Date.now());
+
+      await freshSessionsAPI.update('session-123', { requirements: 'Manual hardtop' });
+
+      expect(mockPatch).toHaveBeenCalledWith('/api/sessions/session-123', {
+        requirements: 'Manual hardtop',
+      });
+    });
   });
 
   describe('listingsAPI', () => {
@@ -195,6 +212,20 @@ describe('API Service', () => {
       await freshListingsAPI.markRemoved('session-123', 'listing-456');
 
       expect(mockPatch).toHaveBeenCalledWith('/api/sessions/session-123/listings/listing-456');
+    });
+
+    it('should request listing reevaluation', async () => {
+      const mockResponse = { data: { id: 'listing-456', score: 80 } };
+      const mockPost = vi.fn().mockResolvedValue(mockResponse);
+      axios.create = vi.fn(() => ({
+        post: mockPost,
+      }));
+
+      const { listingsAPI: freshListingsAPI } = await import('./api?update=' + Date.now());
+
+      await freshListingsAPI.reevaluate('session-123', 'listing-456');
+
+      expect(mockPost).toHaveBeenCalledWith('/api/sessions/session-123/listings/listing-456/reevaluate');
     });
   });
 

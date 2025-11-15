@@ -13,6 +13,13 @@ from database import get_db
 import crud
 import models
 from auth import get_current_user
+from agent.schemas import (
+    AgentRequest,
+    AgentErrorResponse,
+    UserMessage as AgentUserMessage
+)
+from agent.service import AgentService
+from routes.agent_utils import build_session_context, process_agent_actions
 
 router = APIRouter()
 
@@ -145,3 +152,70 @@ async def mark_listing_removed(
     listing = crud.mark_listing_removed(db=db, listing_id=listing_id)
 
     return listing
+
+
+@router.post("/{listing_id}/reevaluate", response_model=ListingResponse)
+async def reevaluate_listing(
+    session_id: str,
+    listing_id: str,
+    db: DBSession = Depends(get_db),
+    current_user: models.User = Depends(get_current_user)
+):
+    """
+    Manually trigger the agent to re-evaluate a specific listing
+    """
+    session = verify_session_ownership(session_id, current_user, db)
+
+    listing = crud.get_listing_by_id(db=db, listing_id=listing_id)
+    if not listing or listing.session_id != session_id:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Listing not found"
+        )
+
+    if listing.status != "active":
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Cannot re-evaluate a removed listing"
+        )
+
+    # Create a synthetic user message so the request is logged in the chat history
+    request_text = f'Please re-evaluate "{listing.title}" (ID: {listing.id}) and refresh its score.'
+    user_message = crud.create_message(
+        db=db,
+        session_id=session_id,
+        sender="user",
+        text=request_text,
+        type="normal"
+    )
+
+    agent_context = build_session_context(db, session, current_user)
+    agent_request = AgentRequest(
+        user_message=AgentUserMessage(
+            id=user_message.id,
+            text=user_message.text
+        ),
+        session_context=agent_context
+    )
+
+    agent_service = AgentService(db)
+    agent_response = agent_service.process_request(agent_request)
+
+    if isinstance(agent_response, AgentErrorResponse):
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail=agent_response.error.message
+        )
+
+    agent_message = crud.create_message(
+        db=db,
+        session_id=session_id,
+        sender="agent",
+        text=agent_response.agent_message.text,
+        type="normal"
+    )
+
+    process_agent_actions(db, session_id, agent_response.actions, agent_message.id)
+
+    updated_listing = crud.get_listing_by_id(db=db, listing_id=listing_id)
+    return updated_listing
