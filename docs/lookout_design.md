@@ -76,6 +76,10 @@ Non-goals (MVP):
    - Treat the next user message as the answer.
 6. The UI shall surface basic errors (e.g., agent unavailable) in a simple, human-readable way.
 
+**Sample UI Design**
+
+![UI Design](lookout_preliminary_ui.png)
+
 ---
 
 ### 3.2 Back-end API Service
