@@ -23,6 +23,7 @@ The system has three main components in a clean separation of concerns:
 - Chat interface for agent interaction
 - Handles blocking clarifying questions from the agent
 - Allows users to specify/edit session-level requirements and manually re-run a listing evaluation
+- Surfaces clarifying questions directly on each listing (with inline answer forms) in addition to the global chat transcript
 
 ### 2. Back-end API Service (backend/)
 - **Canonical data owner**: All users, sessions, messages, and listings data
@@ -47,6 +48,7 @@ Five core tables in SQLite (see `docs/lookout_design.md` Section 4 for full sche
 1. **users**: email, password_hash, display_name
 2. **sessions**: user_id, title, category, requirements text, status (ACTIVE | WAITING_FOR_CLARIFICATION | CLOSED)
 3. **messages**: session_id, sender (user|agent), type (normal|clarification_question), is_blocking
+   - Clarifying questions now record `target_listing_id` when the agent references a specific listing so the UI can render them inline.
 4. **listings**: session_id, title/url/price/metadata, status (active|removed), score (0-100), rationale
 5. **agent_memory**: key (user:{id} or session:{id}), type (user_preferences|session_summary), data (JSONB)
 
@@ -135,8 +137,12 @@ Key backend endpoints (FastAPI auto-docs at `/docs`):
 
 **Listings:**
 - POST/GET `/api/sessions/{session_id}/listings`
+- PUT `/api/sessions/{session_id}/listings/{listing_id}` (edit listing details + trigger re-evaluation)
 - PATCH `/api/sessions/{session_id}/listings/{listing_id}` (mark removed)
 - POST `/api/sessions/{session_id}/listings/{listing_id}/reevaluate` (manual re-run of a single listing)
+
+**Clarifications:**
+- POST `/api/sessions/{session_id}/clarifications/{message_id}/answer` (answer a specific pending clarifying question, typically from a listing card)
 
 **Messages:**
 - POST `/api/sessions/{session_id}/messages` (triggers agent call)
@@ -150,7 +156,7 @@ Key backend endpoints (FastAPI auto-docs at `/docs`):
 1. **Separation of concerns**: Backend owns data, Agent Interface owns prompts/LLM/memory
 2. **Stateless agent calls**: Each agent request includes full `session_context` (user, session, messages, listings)
 3. **Memory efficiency**: Agent memory (preferences, session summaries) reduces need to send full chat history
-4. **Single blocking question**: Only one clarifying question at a time, simple state machine
+4. **Clarifying question batching**: The agent may ask multiple blocking questions at once (one detail per question), and the session stays blocked until all are answered
 5. **Delete cascades**: Session deletion must clean up messages, listings, AND agent_memory
 
 ## Implementation Reference

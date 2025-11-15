@@ -262,6 +262,19 @@ class TestSessionAPI:
 class TestListingAPI:
     """Test listing endpoints"""
 
+    @pytest.fixture(autouse=True)
+    def stub_agent(self, monkeypatch):
+        """Default stub for agent evaluations used by create/update endpoints"""
+        def fake_process_request(self, request):
+            return AgentResponse(
+                agent_message=AgentMessage(text="Stub evaluation."),
+                actions=[]
+            )
+        monkeypatch.setattr(
+            "routes.listing_routes.AgentService.process_request",
+            fake_process_request
+        )
+
     @pytest.fixture
     def authenticated_client_with_session(self, client):
         """Create authenticated client with a session"""
@@ -289,7 +302,8 @@ class TestListingAPI:
                 "url": "https://example.com",
                 "price": 13500,
                 "currency": "USD",
-                "marketplace": "Craigslist"
+                "marketplace": "Craigslist",
+                "description": "Great car"
             }
         )
 
@@ -297,6 +311,7 @@ class TestListingAPI:
         data = response.json()
         assert data["title"] == "2014 Mazda Miata"
         assert data["price"] == 13500.0
+        assert data["description"] == "Great car"
 
     def test_list_listings(self, authenticated_client_with_session):
         """Test listing listings"""
@@ -339,6 +354,45 @@ class TestListingAPI:
         data = response.json()
         assert data["status"] == "removed"
 
+    def test_update_listing(self, authenticated_client_with_session, monkeypatch):
+        """Test updating listing details"""
+        client = authenticated_client_with_session
+        session_id = client.session_id
+
+        create_response = client.post(
+            f"/api/sessions/{session_id}/listings",
+            json={"title": "Original"}
+        )
+        listing_id = create_response.json()["id"]
+
+        call_info = {"count": 0}
+
+        def fake_process_request(self, request):
+            call_info["count"] += 1
+            return AgentResponse(
+                agent_message=AgentMessage(text="Updated."),
+                actions=[]
+            )
+
+        monkeypatch.setattr(
+            "routes.listing_routes.AgentService.process_request",
+            fake_process_request
+        )
+
+        response = client.put(
+            f"/api/sessions/{session_id}/listings/{listing_id}",
+            json={
+                "title": "Updated title",
+                "description": "Updated description"
+            }
+        )
+
+        assert response.status_code == 200
+        data = response.json()
+        assert data["title"] == "Updated title"
+        assert data["description"] == "Updated description"
+        assert call_info["count"] == 1
+
     def test_reevaluate_listing(self, authenticated_client_with_session, monkeypatch):
         """Test manual listing reevaluation triggers agent workflow"""
         client = authenticated_client_with_session
@@ -379,3 +433,248 @@ class TestListingAPI:
         data = response.json()
         assert data["score"] == 88
         assert "Manual refresh" in data["rationale"]
+
+
+class TestClarificationsAPI:
+    """Test clarifications endpoints"""
+
+    @pytest.fixture
+    def authenticated_client_with_listing(self, client):
+        """Create authenticated client with session and listing"""
+        client.post(
+            "/api/auth/signup",
+            json={"email": "test@example.com", "password": "password123"}
+        )
+        session_response = client.post(
+            "/api/sessions",
+            json={"title": "Test Session", "category": "cars"}
+        )
+        session_id = session_response.json()["id"]
+        listing_response = client.post(
+            f"/api/sessions/{session_id}/listings",
+            json={"title": "Listing 1"}
+        )
+        listing_id = listing_response.json()["id"]
+        client.session_id = session_id
+        client.listing_id = listing_id
+        return client
+
+    @pytest.fixture
+    def authenticated_client_with_two_listings(self, client):
+        """Create authenticated client with two listings"""
+        client.post(
+            "/api/auth/signup",
+            json={"email": "test@example.com", "password": "password123"}
+        )
+        session_response = client.post(
+            "/api/sessions",
+            json={"title": "Test Session", "category": "cars"}
+        )
+        session_id = session_response.json()["id"]
+        listing1 = client.post(
+            f"/api/sessions/{session_id}/listings",
+            json={"title": "Listing 1"}
+        ).json()["id"]
+        listing2 = client.post(
+            f"/api/sessions/{session_id}/listings",
+            json={"title": "Listing 2"}
+        ).json()["id"]
+        client.session_id = session_id
+        client.listing_ids = [listing1, listing2]
+        return client
+
+    def test_listing_level_clarification_flow(self, authenticated_client_with_listing, monkeypatch):
+        """Verify clarifying questions appear under listings and can be answered inline"""
+        client = authenticated_client_with_listing
+        session_id = client.session_id
+        listing_id = client.listing_id
+
+        def fake_process_request(self, request):
+            if "50k miles" in request.user_message.text:
+                return AgentResponse(
+                    agent_message=AgentMessage(text="Thanks for clarifying."),
+                    actions=[
+                        {
+                            "type": "UPDATE_EVALUATIONS",
+                            "evaluations": [
+                                {
+                                    "listing_id": listing_id,
+                                    "score": 90,
+                                    "rationale": "Clarification received."
+                                }
+                            ]
+                        }
+                    ]
+                )
+            return AgentResponse(
+                agent_message=AgentMessage(text="Need mileage info."),
+                actions=[
+                    {
+                        "type": "ASK_CLARIFYING_QUESTION",
+                        "question": "How many miles are on this listing?",
+                        "blocking": True
+                    }
+                ]
+            )
+
+        monkeypatch.setattr(
+            "routes.message_routes.AgentService.process_request",
+            fake_process_request
+        )
+
+        # Trigger clarifying question
+        response = client.post(
+            f"/api/sessions/{session_id}/messages",
+            json={"text": "Please evaluate this listing"}
+        )
+        assert response.status_code == 201
+
+        # Fetch state and verify clarification is attached to listing
+        state = client.get(f"/api/sessions/{session_id}/state").json()
+        listing = next(item for item in state["listings"] if item["id"] == listing_id)
+        assert len(listing["clarifications"]) == 1
+        clarification_id = listing["clarifications"][0]["id"]
+        assert listing["clarifications"][0]["clarification_status"] == "pending"
+
+        # Answer clarification inline
+        answer_response = client.post(
+            f"/api/sessions/{session_id}/clarifications/{clarification_id}/answer",
+            json={"text": "It has 50k miles"}
+        )
+        assert answer_response.status_code == 201
+
+        # Clarification should be answered and listing re-evaluated
+        updated_state = client.get(f"/api/sessions/{session_id}/state").json()
+        updated_listing = next(item for item in updated_state["listings"] if item["id"] == listing_id)
+        clarification = updated_listing["clarifications"][0]
+        assert clarification["clarification_status"] == "answered"
+        assert clarification["answer_text"] == "It has 50k miles"
+        assert updated_listing["score"] == 90
+
+    def test_listing_clarification_from_reevaluate_without_listing_id(self, authenticated_client_with_listing, monkeypatch):
+        """Ensure clarifications from manual reevaluation are linked even without listing_id in action"""
+        client = authenticated_client_with_listing
+        session_id = client.session_id
+        listing_id = client.listing_id
+
+        def fake_process_request(self, request):
+            if "50k miles" in request.user_message.text:
+                return AgentResponse(
+                    agent_message=AgentMessage(text="Thanks for clarifying."),
+                    actions=[
+                        {
+                            "type": "UPDATE_EVALUATIONS",
+                            "evaluations": [
+                                {
+                                    "listing_id": listing_id,
+                                    "score": 92,
+                                    "rationale": "Clarification applied."
+                                }
+                            ]
+                        }
+                    ]
+                )
+            return AgentResponse(
+                agent_message=AgentMessage(text="Need mileage info."),
+                actions=[
+                    {
+                        "type": "ASK_CLARIFYING_QUESTION",
+                        "question": "How many miles are on this listing?",
+                        "blocking": True
+                    }
+                ]
+            )
+
+        monkeypatch.setattr(
+            "routes.listing_routes.AgentService.process_request",
+            fake_process_request
+        )
+
+        response = client.post(f"/api/sessions/{session_id}/listings/{listing_id}/reevaluate")
+        assert response.status_code == 200
+
+        state = client.get(f"/api/sessions/{session_id}/state").json()
+        listing = next(item for item in state["listings"] if item["id"] == listing_id)
+        assert len(listing["clarifications"]) == 1
+        clarification_id = listing["clarifications"][0]["id"]
+
+        client.post(
+            f"/api/sessions/{session_id}/clarifications/{clarification_id}/answer",
+            json={"text": "It has 50k miles"}
+        )
+
+        updated_state = client.get(f"/api/sessions/{session_id}/state").json()
+        updated_listing = next(item for item in updated_state["listings"] if item["id"] == listing_id)
+        clarification = updated_listing["clarifications"][0]
+        assert clarification["clarification_status"] == "answered"
+        assert updated_listing["score"] == 92
+
+    def test_multiple_clarifications_same_response(self, authenticated_client_with_two_listings, monkeypatch):
+        """Agent can return multiple clarifications at once"""
+        client = authenticated_client_with_two_listings
+        session_id = client.session_id
+        listing_a, listing_b = client.listing_ids
+        call_count = {"count": 0}
+
+        def fake_process_request(self, request):
+            call_count["count"] += 1
+            if call_count["count"] == 1:
+                return AgentResponse(
+                    agent_message=AgentMessage(text="Need more info."),
+                    actions=[
+                        {
+                            "type": "ASK_CLARIFYING_QUESTION",
+                            "question": "What's the mileage for Listing 1?",
+                            "blocking": True,
+                            "listing_id": listing_a
+                        },
+                        {
+                            "type": "ASK_CLARIFYING_QUESTION",
+                            "question": "Any accident history for Listing 2?",
+                            "blocking": True,
+                            "listing_id": listing_b
+                        }
+                    ]
+                )
+            else:
+                return AgentResponse(
+                    agent_message=AgentMessage(text="Thanks!"),
+                    actions=[]
+                )
+
+        monkeypatch.setattr(
+            "routes.message_routes.AgentService.process_request",
+            fake_process_request
+        )
+
+        client.post(
+            f"/api/sessions/{session_id}/messages",
+            json={"text": "Evaluate both listings"}
+        )
+
+        state = client.get(f"/api/sessions/{session_id}/state").json()
+        listing_state_map = {listing["id"]: listing for listing in state["listings"]}
+        assert len(listing_state_map[listing_a]["clarifications"]) == 1
+        assert len(listing_state_map[listing_b]["clarifications"]) == 1
+
+        clar_a = listing_state_map[listing_a]["clarifications"][0]
+        clar_b = listing_state_map[listing_b]["clarifications"][0]
+
+        client.post(
+            f"/api/sessions/{session_id}/clarifications/{clar_a['id']}/answer",
+            json={"text": "50k miles"}
+        )
+
+        state_after_first = client.get(f"/api/sessions/{session_id}/state").json()
+        listing_b_state = next(item for item in state_after_first["listings"] if item["id"] == listing_b)
+        assert listing_b_state["clarifications"][0]["clarification_status"] == "pending"
+
+        client.post(
+            f"/api/sessions/{session_id}/clarifications/{clar_b['id']}/answer",
+            json={"text": "Clean history"}
+        )
+
+        final_state = client.get(f"/api/sessions/{session_id}/state").json()
+        listing_final = {l["id"]: l for l in final_state["listings"]}
+        assert listing_final[listing_a]["clarifications"][0]["clarification_status"] == "answered"
+        assert listing_final[listing_b]["clarifications"][0]["clarification_status"] == "answered"

@@ -30,7 +30,8 @@ app.add_middleware(
 app.include_router(auth_routes.router, prefix="/api/auth", tags=["auth"])
 app.include_router(session_routes.router, prefix="/api/sessions", tags=["sessions"])
 app.include_router(listing_routes.router, prefix="/api/sessions/{session_id}/listings", tags=["listings"])
-app.include_router(message_routes.router, prefix="/api/sessions/{session_id}/messages", tags=["messages"])
+app.include_router(message_routes.router, prefix="/api/sessions/{session_id}", tags=["messages"])
+app.include_router(message_routes.clarification_router, prefix="/api/sessions/{session_id}", tags=["clarifications"])
 app.include_router(agent_routes.router, prefix="/agent", tags=["agent-interface"])
 
 @app.get("/")

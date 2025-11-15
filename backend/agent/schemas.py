@@ -37,6 +37,7 @@ class ListingInfo(BaseModel):
     currency: Optional[str]
     marketplace: Optional[str]
     listing_metadata: Optional[Dict]
+    description: Optional[str]
     score: Optional[int]
     rationale: Optional[str]
 

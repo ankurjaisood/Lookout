@@ -13,6 +13,8 @@ Lookout combines a React frontend, FastAPI backend, and Google Gemini AI to prov
 - **Preference Learning**: System remembers your preferences across sessions
 - **Session Requirements**: Capture must-have criteria once per session and let the agent enforce them
 - **Manual Re-evaluation**: Re-run the agent on any listing with a single click when details change
+- **Listing Clarifications**: View and answer one or more agent questions directly on each listing card
+- **Inline Editing**: Update listing details/description at any time and the agent re-evaluates automatically
 - **Real-time Chat**: Interactive conversation with the AI agent
 - **Session Management**: Organize your searches by category
 - **Deal Quality Labels**: Clear "horrible/poor/fair/good/great deal" indicators
@@ -97,6 +99,8 @@ The application will be available at:
   - **Price**: Listing price
   - **Currency**: USD, EUR, GBP, etc.
   - **Marketplace**: Where you found it
+  - **Description**: Paste the listing description/details so the agent can read it
+- The agent automatically evaluates each new listing once you click "Add"
 
 ### 4. Chat with the Agent
 
@@ -114,11 +118,22 @@ Each listing shows:
 - **Score Visualization**: 0-100 score with progress bar
 - **Rationale**: Detailed explanation of the score
 - **Quick Actions**: View listing, remove from consideration
+- **Clarifications**: Any outstanding questions about that listing with inline answer forms
 
 ### 6. Re-evaluate a Listing
 
 - Hover over the listing title and click the ⟳ button to ask the agent to re-check just that item
 - The listing’s score and rationale refresh after the agent responds
+
+### 7. Answer Clarifying Questions Inline
+
+- When the agent needs more info about a listing, the question appears under that listing’s card. The agent can ask multiple questions at once (one specific detail per question).
+- Type your answers directly in the inline forms, in any order. The session resumes automatically once all blocking questions are answered.
+
+### 8. Edit Listings Anytime
+
+- Click the “Edit” button on a listing card to adjust title, URL, price, marketplace, or the pasted description
+- Saving changes automatically reruns the evaluation so scores and rationales stay current
 
 ## Manual Setup (if scripts fail)
 

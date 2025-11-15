@@ -66,13 +66,15 @@ Non-goals (MVP):
 3. Within a session, the UI shall allow users to:
    - Add listings by entering title, price, URL, and optional metadata.
    - Remove listings from consideration.
-   - Manually trigger a re-evaluation for a specific listing.
+   - Edit existing listing details (title, price, description, etc.) with inline forms.
+   - Manually trigger a re-evaluation for a specific listing (automatically triggered on create/edit as well).
    - Send free-form chat messages to the agent.
+   - View and answer clarifying questions directly within the relevant listing card.
 4. The UI shall display:
    - The chat history for the session.
    - All **active** listings sorted by score (descending).
    - A deal-quality label for each listing derived from its 0–100 score using a fixed threshold mapping.
-   - The agent’s rationale text for each evaluated listing.
+   - The agent’s rationale text and any clarifying questions for each evaluated listing (with inline answer controls when pending).
 5. When the session is waiting for a blocking clarifying question, the UI shall:
    - Prominently display the question message.
    - Treat the next user message as the answer.
@@ -99,22 +101,23 @@ Non-goals (MVP):
 1. The back-end shall provide endpoints for:
    - User signup/login (email + password).
    - Session CRUD (create, list, delete).
-   - Listing CRUD within a session (create, mark removed).
+   - Listing CRUD within a session (create, update, mark removed).
    - Manual re-evaluation of a single listing (`POST /api/sessions/{session_id}/listings/{listing_id}/reevaluate`).
    - Posting user messages within a session.
+   - Answering clarifying questions scoped to a specific listing/question (`POST /api/sessions/{session_id}/clarifications/{message_id}/answer`), which feeds the same state machine as global chat answers.
    - Fetching session state for the UI (messages + active listings + scores).
 2. The back-end shall be the canonical store for:
    - Users, sessions, messages, and listings.
    - Listings’ current 0–100 score and rationale (if evaluated).
 3. The back-end shall enforce:
    - That users can only access their own sessions and data.
-4. On relevant user actions (new message, new listings, etc.), the back-end shall:
+4. On relevant user actions (new message, new listings, listing edits, etc.), the back-end shall:
    - Build a `session_context` from DB state.
    - Call `POST /agent/sessions/{session_id}/respond` on the Agent Interface.
    - Store the returned `agent_message` as a `messages` row.
    - Apply returned actions:
      - Update listing scores and rationales.
-     - Record blocking clarifying questions and update session state accordingly.
+     - Record blocking clarifying questions, link them to a listing if provided, and update session state accordingly.
 5. When a session is deleted, the back-end shall:
    - Delete all associated messages and listings for that session.
    - Notify or call the Agent Interface to delete any associated session memory.
@@ -241,11 +244,13 @@ text                  TEXT NOT NULL
 is_blocking           BOOLEAN NOT NULL DEFAULT FALSE
 clarification_status  TEXT NULL               -- 'pending' | 'answered' | 'skipped'
 answer_message_id     UUID NULL               -- FK → messages.id (the user’s answer)
+target_listing_id     UUID NULL               -- FK → listings.id when the clarifying question is about a specific listing
 created_at            TIMESTAMP NOT NULL
 ```
 
 - Blocking clarifying questions are represented as:
   - `sender='agent'`, `type='clarification_question'`, `is_blocking=true`, `clarification_status='pending'`.
+  - `target_listing_id` stores the listing this question references (NULL for global questions).
 - When the user answers:
   - A new user `messages` row is created.
   - The question message’s `clarification_status` is set to `'answered'`, and `answer_message_id` is set.
@@ -268,6 +273,7 @@ status       TEXT NOT NULL DEFAULT 'active'   -- 'active' | 'removed'
 
 score        INTEGER NULL             -- 0–100; null until evaluated
 rationale    TEXT NULL                -- explanation from the agent
+description  TEXT NULL                -- raw pasted description text
 
 created_at   TIMESTAMP NOT NULL
 updated_at   TIMESTAMP NOT NULL
@@ -417,22 +423,32 @@ Session state values:
 1. `ACTIVE` → `WAITING_FOR_CLARIFICATION`  
    - Trigger: Agent returns an `ASK_CLARIFYING_QUESTION` action with `blocking=true`.
    - Back-end:
-     - Inserts a `messages` row (agent, `type='clarification_question'`, `is_blocking=true`, `clarification_status='pending'`).
-     - Updates `sessions.status='WAITING_FOR_CLARIFICATION'` and `pending_clarification_id` to that message ID.
+     - Inserts a `messages` row (agent, `type='clarification_question'`, `is_blocking=true`, `clarification_status='pending'`, `target_listing_id` when supplied in the action).
+     - Updates `sessions.status='WAITING_FOR_CLARIFICATION'` and `pending_clarification_id` to the first pending clarification (if none existed before, it becomes the new one). Additional clarifying questions keep the session in `WAITING_FOR_CLARIFICATION` without overwriting earlier pending IDs.
 
 2. `WAITING_FOR_CLARIFICATION` → `ACTIVE`  
-   - Trigger: User sends the next message in that session.
+   - Trigger: All blocking clarifying questions have been answered (users can respond via the global chat or via listing-level clarification forms).
    - Back-end:
-     - Inserts a `messages` row for the user.
-     - Updates the blocking question message:
+     - Inserts a `messages` row for the user for each answer.
+     - Updates the corresponding clarifying question message(s):
        - `clarification_status='answered'`, `answer_message_id=<user message id>`.
-     - Sets `sessions.status='ACTIVE'` and `pending_clarification_id=NULL`.
+     - Keeps `sessions.status='WAITING_FOR_CLARIFICATION'` while other blocking clarifications remain pending; once the final one is answered, sets `sessions.status='ACTIVE'` and `pending_clarification_id=NULL`.
      - Calls the Agent API again with updated `session_context`.
 
 3. `ACTIVE` → `CLOSED`  
    - Trigger: User deletes or closes the session.
 
-This supports a single blocking clarifying question at a time while keeping the back-end and Agent Interface responsibilities cleanly separated.
+This supports multiple blocking clarifying questions at the same time while keeping the back-end and Agent Interface responsibilities cleanly separated. Listing-level answer forms simply mirror the global chat behavior while providing better UX context, and the session remains `WAITING_FOR_CLARIFICATION` until all blocking clarifications have been answered.
+
+### 5.3 Listing-Level Clarification Display
+
+- When the agent associates a clarifying question with a listing (via `target_listing_id`), the back-end shall surface that relationship in the session state response so the UI can render it under the matching card.
+- Clarifying questions must focus on a single missing detail (one attribute per question) and should only be asked when the requested information is not already present in the listing metadata, pasted description, or prior conversation. If multiple pieces of information are missing the agent should issue sequential single-focus questions referencing the same listing.
+- Each listing card shall show:
+  - Current score, rationale, and deal label.
+  - A list of clarifying questions associated with that listing, including their status and answer (if any).
+  - An inline answer form for pending blocking questions; submitting the form calls the clarifications endpoint, which triggers the same agent flow as the global chat.
+- Global clarifying questions (no `target_listing_id`) remain in the main chat panel and still block the session until answered.
 
 ---
 
