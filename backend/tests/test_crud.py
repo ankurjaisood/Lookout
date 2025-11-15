@@ -244,6 +244,31 @@ class TestListingCRUD:
         active_listings = crud.list_listings_by_session(db=db, session_id=session.id, active_only=True)
         assert len(active_listings) == 0
 
+    def test_update_listing_details(self, db):
+        """Test updating listing fields"""
+        user = crud.create_user(db=db, email="test@example.com", password="password123")
+        session = crud.create_session(db=db, user_id=user.id, title="Test", category="cars")
+        listing = crud.create_listing(
+            db=db,
+            session_id=session.id,
+            title="Listing 1",
+            url="https://example.com",
+            price=10000,
+            description="Old description"
+        )
+
+        updated = crud.update_listing(
+            db=db,
+            listing_id=listing.id,
+            title="Updated Listing",
+            price=12000,
+            description="New description"
+        )
+
+        assert updated.title == "Updated Listing"
+        assert float(updated.price) == 12000
+        assert updated.description == "New description"
+
 
 class TestMessageCRUD:
     """Test message CRUD operations"""
@@ -323,6 +348,57 @@ class TestMessageCRUD:
 
         assert updated.clarification_status == "answered"
         assert updated.answer_message_id == answer.id
+
+    def test_create_message_with_target_listing(self, db):
+        """Test creating a clarification message linked to a listing"""
+        user = crud.create_user(db=db, email="test@example.com", password="password123")
+        session = crud.create_session(db=db, user_id=user.id, title="Test", category="cars")
+        listing = crud.create_listing(db=db, session_id=session.id, title="Listing 1")
+
+        message = crud.create_message(
+            db=db,
+            session_id=session.id,
+            sender="agent",
+            text="How many miles?",
+            type="clarification_question",
+            is_blocking=True,
+            clarification_status="pending",
+            target_listing_id=listing.id
+        )
+
+        assert message.target_listing_id == listing.id
+
+    def test_list_listing_clarifications_by_session(self, db):
+        """Test listing clarifications retrieval"""
+        user = crud.create_user(db=db, email="test@example.com", password="password123")
+        session = crud.create_session(db=db, user_id=user.id, title="Test", category="cars")
+        listing = crud.create_listing(db=db, session_id=session.id, title="Listing 1")
+
+        crud.create_message(
+            db=db,
+            session_id=session.id,
+            sender="agent",
+            text="How many miles?",
+            type="clarification_question",
+            is_blocking=True,
+            clarification_status="pending",
+            target_listing_id=listing.id
+        )
+
+        crud.create_message(
+            db=db,
+            session_id=session.id,
+            sender="agent",
+            text="General question",
+            type="clarification_question",
+            is_blocking=True,
+            clarification_status="pending"
+        )
+
+        clarifications = crud.list_listing_clarifications_by_session(db=db, session_id=session.id)
+
+        assert len(clarifications) == 1
+        assert clarifications[0].target_listing_id == listing.id
 
 
 class TestAgentMemoryCRUD:

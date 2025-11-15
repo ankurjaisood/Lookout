@@ -17,6 +17,11 @@ This file tracks incremental implementation progress for the Marketplace Researc
 - Introduced per-listing "re-run evaluation" control backed by `POST /api/sessions/{session_id}/listings/{listing_id}/reevaluate`
 - Documented the new workflow in `README.md` and `docs/lookout_design.md`
 - Expanded automated tests (backend API + frontend service unit tests) to cover the new endpoint and UX hooks
+- Added listing-level clarifying questions with inline answer forms and a dedicated `POST /api/sessions/{session_id}/clarifications/{message_id}/answer` endpoint, plus visual surfacing of answers beneath each listing
+- Clarifying questions can now be asked in parallel (one detail per question); the backend tracks multiple pending clarifications and the UI keeps them organized by listing
+- Added inline listing editing with pasted descriptions and automatic re-evaluation on create/update
+- Updated agent prompt guidance so each clarifying question only asks about one specific detail, improving readability of listing cards
+- Clarifying questions now explicitly check listing descriptions and previous answers to avoid asking for information that already exists
 
 ### Phase 0: Project Setup & Infrastructure ✅
 - ✅ Task 0.1: Initialize Monorepo Structure

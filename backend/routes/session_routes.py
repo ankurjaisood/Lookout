@@ -8,7 +8,8 @@ DELETE /api/sessions/{session_id} - delete session
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session as DBSession
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Dict
+from collections import defaultdict
 from datetime import datetime
 from database import get_db
 import crud
@@ -60,6 +61,16 @@ class MessageInState(BaseModel):
         from_attributes = True
 
 
+class ClarificationInListing(BaseModel):
+    id: str
+    text: str
+    is_blocking: bool
+    clarification_status: Optional[str]
+    answer_message_id: Optional[str]
+    answer_text: Optional[str]
+    created_at: datetime
+
+
 class ListingInState(BaseModel):
     id: str
     title: str
@@ -68,9 +79,11 @@ class ListingInState(BaseModel):
     currency: Optional[str]
     marketplace: Optional[str]
     listing_metadata: Optional[dict]
+    description: Optional[str]
     score: Optional[int]
     rationale: Optional[str]
     created_at: datetime
+    clarifications: List[ClarificationInListing]
 
     class Config:
         from_attributes = True
@@ -242,8 +255,50 @@ async def get_session_state(
     # Get listings (active only)
     listings = crud.list_listings_by_session(db=db, session_id=session_id, active_only=True)
 
+    # Map clarifying questions to their listings
+    clarifications = crud.list_listing_clarifications_by_session(db=db, session_id=session_id)
+    clarifications_map = defaultdict(list)
+    for clarification in clarifications:
+        if not clarification.target_listing_id:
+            continue
+        answer_text = clarification.answer_message.text if clarification.answer_message else None
+        clarifications_map[clarification.target_listing_id].append(
+            ClarificationInListing(
+                id=clarification.id,
+                text=clarification.text,
+                is_blocking=clarification.is_blocking,
+                clarification_status=clarification.clarification_status,
+                answer_message_id=clarification.answer_message_id,
+                answer_text=answer_text,
+                created_at=clarification.created_at
+            )
+        )
+
+    listing_states: List[ListingInState] = []
+    for listing in listings:
+        metadata_value = listing.__dict__.get('listing_metadata', {})
+        if not isinstance(metadata_value, dict):
+            metadata_value = {}
+
+        listing_states.append(
+            ListingInState(
+                id=listing.id,
+                title=listing.title,
+                url=listing.url,
+                price=float(listing.price) if listing.price is not None else None,
+                currency=listing.currency,
+                marketplace=listing.marketplace,
+                listing_metadata=metadata_value,
+                description=listing.description,
+                score=listing.score,
+                rationale=listing.rationale,
+                created_at=listing.created_at,
+                clarifications=clarifications_map.get(listing.id, [])
+            )
+        )
+
     return SessionStateResponse(
         session=session,
         messages=messages,
-        listings=listings
+        listings=listing_states
     )

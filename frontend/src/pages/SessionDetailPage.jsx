@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { sessionsAPI, listingsAPI, messagesAPI } from '../services/api';
+import { sessionsAPI, listingsAPI, messagesAPI, clarificationsAPI } from '../services/api';
 
 const DEAL_LABELS = {
   0: 'Horrible deal',
@@ -33,17 +33,25 @@ export default function SessionDetailPage() {
   const [requirementsSaving, setRequirementsSaving] = useState(false);
   const [requirementsStatus, setRequirementsStatus] = useState(null);
   const [reevaluatingListingIds, setReevaluatingListingIds] = useState(new Set());
+  const [clarificationInputs, setClarificationInputs] = useState({});
+  const [clarificationSubmitting, setClarificationSubmitting] = useState({});
 
   // Add listing form state
   const [showAddForm, setShowAddForm] = useState(false);
-  const [newListing, setNewListing] = useState({
+  const defaultListingForm = {
     title: '',
     url: '',
     price: '',
     currency: 'USD',
     marketplace: '',
-    metadata: {}
-  });
+    metadata: {},
+    description: ''
+  };
+
+  const [newListing, setNewListing] = useState(defaultListingForm);
+
+  const [editingListingId, setEditingListingId] = useState(null);
+  const [editListingData, setEditListingData] = useState(defaultListingForm);
 
   // Chat state
   const [messageText, setMessageText] = useState('');
@@ -68,6 +76,35 @@ export default function SessionDetailPage() {
     previousMessageCountRef.current = messages.length;
   }, [messages]);
 
+  useEffect(() => {
+    const activeClarIds = new Set();
+    listings.forEach((listing) => {
+      (listing.clarifications || []).forEach((clarification) => {
+        if (clarification.clarification_status !== 'answered') {
+          activeClarIds.add(clarification.id);
+        }
+      });
+    });
+
+    setClarificationInputs((prev) => {
+      const next = {};
+      activeClarIds.forEach((id) => {
+        next[id] = prev[id] || '';
+      });
+      return next;
+    });
+
+    setClarificationSubmitting((prev) => {
+      const next = {};
+      activeClarIds.forEach((id) => {
+        if (prev[id]) {
+          next[id] = prev[id];
+        }
+      });
+      return next;
+    });
+  }, [listings]);
+
   const loadSessionState = async () => {
     try {
       const response = await sessionsAPI.getState(sessionId);
@@ -87,8 +124,9 @@ export default function SessionDetailPage() {
       await listingsAPI.create(sessionId, {
         ...newListing,
         price: newListing.price ? parseFloat(newListing.price) : null,
+        description: newListing.description || null,
       });
-      setNewListing({ title: '', url: '', price: '', currency: 'USD', marketplace: '', metadata: {} });
+      setNewListing(defaultListingForm);
       setShowAddForm(false);
       loadSessionState();
     } catch (error) {
@@ -155,6 +193,83 @@ export default function SessionDetailPage() {
         next.delete(listingId);
         return next;
       });
+    }
+  };
+
+  const handleClarificationInputChange = (clarificationId, value) => {
+    setClarificationInputs((prev) => ({
+      ...prev,
+      [clarificationId]: value,
+    }));
+  };
+
+  const handleClarificationSubmit = async (clarificationId, event) => {
+    event.preventDefault();
+    const text = (clarificationInputs[clarificationId] || '').trim();
+    if (!text) return;
+
+    setClarificationSubmitting((prev) => ({
+      ...prev,
+      [clarificationId]: true,
+    }));
+
+    try {
+      await clarificationsAPI.answer(sessionId, clarificationId, text);
+      setClarificationInputs((prev) => ({
+        ...prev,
+        [clarificationId]: '',
+      }));
+      await loadSessionState();
+    } catch (error) {
+      console.error('Failed to answer clarification:', error);
+    } finally {
+      setClarificationSubmitting((prev) => ({
+        ...prev,
+        [clarificationId]: false,
+      }));
+    }
+  };
+
+  const handleEditListingChange = (field, value) => {
+    setEditListingData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  const startEditingListing = (listing) => {
+    setEditingListingId(listing.id);
+    setEditListingData({
+      title: listing.title || '',
+      url: listing.url || '',
+      price: listing.price !== null && listing.price !== undefined ? String(listing.price) : '',
+      currency: listing.currency || 'USD',
+      marketplace: listing.marketplace || '',
+      metadata: listing.listing_metadata || {},
+      description: listing.description || '',
+    });
+  };
+
+  const cancelEditingListing = () => {
+    setEditingListingId(null);
+    setEditListingData(defaultListingForm);
+  };
+
+  const handleUpdateListing = async (e) => {
+    e.preventDefault();
+    if (!editingListingId) return;
+
+    try {
+      await listingsAPI.update(sessionId, editingListingId, {
+        ...editListingData,
+        price: editListingData.price ? parseFloat(editListingData.price) : null,
+        description: editListingData.description || null,
+      });
+      setEditingListingId(null);
+      setEditListingData(defaultListingForm);
+      await loadSessionState();
+    } catch (error) {
+      console.error('Failed to update listing:', error);
     }
   };
 
@@ -235,75 +350,200 @@ export default function SessionDetailPage() {
                   <option value="GBP">GBP</option>
                 </select>
               </div>
-              <input
-                type="text"
-                placeholder="Marketplace (e.g., Craigslist, eBay)"
-                value={newListing.marketplace}
-                onChange={(e) => setNewListing({ ...newListing, marketplace: e.target.value })}
-              />
-              <button type="submit" className="btn-primary">Add Listing</button>
-            </form>
-          )}
+            <input
+              type="text"
+              placeholder="Marketplace (e.g., Craigslist, eBay)"
+              value={newListing.marketplace}
+              onChange={(e) => setNewListing({ ...newListing, marketplace: e.target.value })}
+            />
+            <textarea
+              placeholder="Paste the listing description/details (optional)"
+              value={newListing.description}
+              onChange={(e) => setNewListing({ ...newListing, description: e.target.value })}
+              rows={4}
+            />
+            <button type="submit" className="btn-primary">Add Listing</button>
+          </form>
+        )}
 
           <div className="listings-grid">
             {listings.length === 0 ? (
               <p className="empty-state">No listings yet. Add some to get started!</p>
             ) : (
-              listings.map((listing) => (
-                <div key={listing.id} className={`listing-card ${listing.score ? 'evaluated' : 'pending'}`}>
-                  <div className="listing-header">
-                    <div className="listing-title-row">
-                      <h3>{listing.title}</h3>
+              listings.map((listing) => {
+                const clarifications = listing.clarifications || [];
+                return (
+                  <div key={listing.id} className={`listing-card ${listing.score ? 'evaluated' : 'pending'}`}>
+                    <div className="listing-header">
+                      <div className="listing-title-row">
+                        <h3>{listing.title}</h3>
+                        <button
+                          type="button"
+                          className={`reevaluate-button ${reevaluatingListingIds.has(listing.id) ? 'spinning' : ''}`}
+                          onClick={() => handleReevaluateListing(listing.id)}
+                          disabled={reevaluatingListingIds.has(listing.id)}
+                          title="Re-evaluate this listing"
+                        >
+                          ⟳
+                        </button>
+                      </div>
+                      {listing.score !== null ? (
+                        <span className={`deal-badge score-${Math.floor(listing.score / 20)}`}>
+                          {getDealLabel(listing.score)}
+                        </span>
+                      ) : (
+                        <span className="deal-badge pending-badge">Pending</span>
+                      )}
+                    </div>
+
+                    {editingListingId === listing.id ? (
+                      <form onSubmit={handleUpdateListing} className="listing-edit-form">
+                        <input
+                          type="text"
+                          placeholder="Title"
+                          value={editListingData.title}
+                          onChange={(e) => handleEditListingChange('title', e.target.value)}
+                          required
+                        />
+                        <input
+                          type="url"
+                          placeholder="URL"
+                          value={editListingData.url}
+                          onChange={(e) => handleEditListingChange('url', e.target.value)}
+                        />
+                        <div className="price-group">
+                          <input
+                            type="number"
+                            placeholder="Price"
+                            value={editListingData.price}
+                            onChange={(e) => handleEditListingChange('price', e.target.value)}
+                          />
+                          <select
+                            value={editListingData.currency}
+                            onChange={(e) => handleEditListingChange('currency', e.target.value)}
+                          >
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                          </select>
+                        </div>
+                        <input
+                          type="text"
+                          placeholder="Marketplace"
+                          value={editListingData.marketplace}
+                          onChange={(e) => handleEditListingChange('marketplace', e.target.value)}
+                        />
+                        <textarea
+                          placeholder="Listing description/details"
+                          value={editListingData.description}
+                          onChange={(e) => handleEditListingChange('description', e.target.value)}
+                          rows={4}
+                        />
+                        <div className="listing-edit-actions">
+                          <button type="submit" className="btn-primary">Save</button>
+                          <button type="button" className="btn-secondary" onClick={cancelEditingListing}>
+                            Cancel
+                          </button>
+                        </div>
+                      </form>
+                    ) : (
+                      <>
+                        {listing.price && (
+                          <p className="listing-price">
+                            {listing.currency || '$'}{listing.price}
+                          </p>
+                        )}
+
+                        {listing.url && (
+                          <a href={listing.url} target="_blank" rel="noopener noreferrer" className="listing-url">
+                            View listing →
+                          </a>
+                        )}
+
+                        {listing.marketplace && (
+                          <p className="listing-marketplace">{listing.marketplace}</p>
+                        )}
+
+                        {listing.description && (
+                          <p className="listing-description">{listing.description}</p>
+                        )}
+                      </>
+                    )}
+
+                    {listing.score !== null && (
+                      <div className="listing-evaluation">
+                        <div className="score-bar">
+                          <div className="score-fill" style={{ width: `${listing.score}%` }}></div>
+                          <span className="score-value">{listing.score}/100</span>
+                        </div>
+                        <p className="rationale">{listing.rationale}</p>
+                      </div>
+                    )}
+
+                    {clarifications.length > 0 && (
+                      <div className="listing-clarifications">
+                        <h4>Clarifications</h4>
+                        {clarifications.map((clarification) => {
+                          const isAnswered = clarification.clarification_status === 'answered';
+                          const inputValue = clarificationInputs[clarification.id] || '';
+                          return (
+                            <div
+                              key={clarification.id}
+                              className={`clarification-item ${isAnswered ? 'answered' : 'pending'}`}
+                            >
+                              <div className="clarification-question">
+                                {clarification.text}
+                                {clarification.is_blocking && !isAnswered && (
+                                  <span className="clarification-badge">Blocking</span>
+                                )}
+                              </div>
+                              {isAnswered ? (
+                                <div className="clarification-answer">
+                                  <strong>You:</strong> {clarification.answer_text || 'Answered'}
+                                </div>
+                              ) : (
+                                <form
+                                  onSubmit={(e) => handleClarificationSubmit(clarification.id, e)}
+                                  className="clarification-form"
+                                >
+                                  <input
+                                    type="text"
+                                    placeholder="Type your answer..."
+                                    value={inputValue}
+                                    onChange={(e) => handleClarificationInputChange(clarification.id, e.target.value)}
+                                  />
+                                  <button
+                                    type="submit"
+                                    className="btn-secondary"
+                                    disabled={
+                                      clarificationSubmitting[clarification.id] ||
+                                      !inputValue.trim()
+                                    }
+                                  >
+                                    {clarificationSubmitting[clarification.id] ? 'Sending...' : 'Send Answer'}
+                                  </button>
+                                </form>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+
+                    <div className="listing-actions">
                       <button
-                        type="button"
-                        className={`reevaluate-button ${reevaluatingListingIds.has(listing.id) ? 'spinning' : ''}`}
-                        onClick={() => handleReevaluateListing(listing.id)}
-                        disabled={reevaluatingListingIds.has(listing.id)}
-                        title="Re-evaluate this listing"
+                        onClick={() => startEditingListing(listing)}
+                        className="btn-secondary"
                       >
-                        ⟳
+                        {editingListingId === listing.id ? 'Editing...' : 'Edit'}
+                      </button>
+                      <button onClick={() => handleRemoveListing(listing.id)} className="btn-remove">
+                        Remove
                       </button>
                     </div>
-                    {listing.score !== null ? (
-                      <span className={`deal-badge score-${Math.floor(listing.score / 20)}`}>
-                        {getDealLabel(listing.score)}
-                      </span>
-                    ) : (
-                      <span className="deal-badge pending-badge">Pending</span>
-                    )}
                   </div>
-
-                  {listing.price && (
-                    <p className="listing-price">
-                      {listing.currency || '$'}{listing.price}
-                    </p>
-                  )}
-
-                  {listing.url && (
-                    <a href={listing.url} target="_blank" rel="noopener noreferrer" className="listing-url">
-                      View listing →
-                    </a>
-                  )}
-
-                  {listing.marketplace && (
-                    <p className="listing-marketplace">{listing.marketplace}</p>
-                  )}
-
-                  {listing.score !== null && (
-                    <div className="listing-evaluation">
-                      <div className="score-bar">
-                        <div className="score-fill" style={{ width: `${listing.score}%` }}></div>
-                        <span className="score-value">{listing.score}/100</span>
-                      </div>
-                      <p className="rationale">{listing.rationale}</p>
-                    </div>
-                  )}
-
-                  <button onClick={() => handleRemoveListing(listing.id)} className="btn-remove">
-                    Remove
-                  </button>
-                </div>
-              ))
+                );
+              })
             )}
           </div>
         </div>

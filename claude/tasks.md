@@ -22,9 +22,9 @@ This document contains the prioritized task breakdown for implementing the Marke
 - ✅ **Phase 5**: Frontend Implementation (7/7 tasks complete)
 - ✅ **Phase 6**: Testing & Quality (4/4 tasks complete)
 - ✅ **Phase 7**: Documentation & Polish (1/2 tasks complete - seed data optional)
-- ✅ **Phase 8**: Post-MVP Enhancements (1/1 tasks complete)
+- ✅ **Phase 8**: Post-MVP Enhancements (2/2 tasks complete)
 
-**Overall Progress**: 32/32 tasks completed (100%) - MVP COMPLETE + Enhancements!
+**Overall Progress**: 33/33 tasks completed (100%) - MVP COMPLETE + Enhancements!
 
 ---
 
@@ -610,6 +610,19 @@ Unified endpoint for UI to fetch complete session state.
 - [x] Frontend control (reload icon with progress state) to trigger reevaluation
 - [x] New backend + frontend tests covering the endpoint and API client helpers
 - [x] Documentation updates (README, CLAUDE.md, design doc, changelog) explaining the workflow
+
+**Status**: ✅ COMPLETED
+
+### Task 8.2: Listing-level Clarifications
+**Priority**: P1  
+**Dependencies**: Task 8.1
+
+**Acceptance Criteria**:
+- [x] Design docs updated to describe per-listing clarifications and inline answers
+- [x] Backend `messages` schema stores `target_listing_id` and exposes clarifications via session state
+- [x] New API endpoint `POST /api/sessions/{session_id}/clarifications/{message_id}/answer`
+- [x] Frontend listing cards show clarifying questions and inline answer forms
+- [x] Tests for CRUD, API endpoint, and frontend API helper updated
 
 **Status**: ✅ COMPLETED
 

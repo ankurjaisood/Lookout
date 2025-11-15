@@ -61,6 +61,9 @@ export const listingsAPI = {
 
   reevaluate: (sessionId, listingId) =>
     api.post(`/api/sessions/${sessionId}/listings/${listingId}/reevaluate`),
+
+  update: (sessionId, listingId, listingData) =>
+    api.put(`/api/sessions/${sessionId}/listings/${listingId}`, listingData),
 };
 
 // Messages API
@@ -70,6 +73,11 @@ export const messagesAPI = {
 
   list: (sessionId) =>
     api.get(`/api/sessions/${sessionId}/messages`),
+};
+
+export const clarificationsAPI = {
+  answer: (sessionId, clarificationId, text) =>
+    api.post(`/api/sessions/${sessionId}/clarifications/${clarificationId}/answer`, { text }),
 };
 
 export default api;

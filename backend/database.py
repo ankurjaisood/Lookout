@@ -42,7 +42,8 @@ def init_db():
 def _run_schema_migrations():
     """
     Lightweight schema migrations for existing installations.
-    Currently ensures the sessions table has the requirements column.
+    Currently ensures the sessions table has the requirements column,
+    the messages table has target_listing_id, and the listings table has description.
     """
     inspector = inspect(engine)
 
@@ -54,3 +55,21 @@ def _run_schema_migrations():
     if "requirements" not in session_columns:
         with engine.begin() as conn:
             conn.execute(text("ALTER TABLE sessions ADD COLUMN requirements TEXT"))
+
+    try:
+        message_columns = [col["name"] for col in inspector.get_columns("messages")]
+    except Exception:
+        return
+
+    if "target_listing_id" not in message_columns:
+        with engine.begin() as conn:
+            conn.execute(text("ALTER TABLE messages ADD COLUMN target_listing_id TEXT"))
+
+    try:
+        listing_columns = [col["name"] for col in inspector.get_columns("listings")]
+    except Exception:
+        return
+
+    if "description" not in listing_columns:
+        with engine.begin() as conn:
+            conn.execute(text("ALTER TABLE listings ADD COLUMN description TEXT"))

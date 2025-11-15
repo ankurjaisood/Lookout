@@ -32,6 +32,17 @@ class CreateListingRequest(BaseModel):
     currency: Optional[str] = None
     marketplace: Optional[str] = None
     listing_metadata: Optional[dict] = None
+    description: Optional[str] = None
+
+
+class UpdateListingRequest(BaseModel):
+    title: Optional[str] = None
+    url: Optional[str] = None
+    price: Optional[float] = None
+    currency: Optional[str] = None
+    marketplace: Optional[str] = None
+    listing_metadata: Optional[dict] = None
+    description: Optional[str] = None
 
 
 class ListingResponse(BaseModel):
@@ -43,6 +54,7 @@ class ListingResponse(BaseModel):
     currency: Optional[str]
     marketplace: Optional[str]
     listing_metadata: Optional[dict]
+    description: Optional[str]
     status: str
     score: Optional[int]
     rationale: Optional[str]
@@ -80,7 +92,7 @@ async def create_listing(
     Add a new listing to a session
     """
     # Verify session ownership
-    verify_session_ownership(session_id, current_user, db)
+    session = verify_session_ownership(session_id, current_user, db)
 
     # Create listing
     listing = crud.create_listing(
@@ -91,7 +103,17 @@ async def create_listing(
         price=request.price,
         currency=request.currency,
         marketplace=request.marketplace,
-        listing_metadata=request.listing_metadata
+        listing_metadata=request.listing_metadata,
+        description=request.description
+    )
+
+    listing = _run_listing_evaluation(
+        db=db,
+        session=session,
+        current_user=current_user,
+        listing=listing,
+        reason_text=f'Please evaluate new listing "{listing.title}".',
+        fail_on_error=False
     )
 
     return listing
@@ -189,6 +211,86 @@ async def reevaluate_listing(
         type="normal"
     )
 
+    updated_listing = _run_listing_evaluation(
+        db=db,
+        session=session,
+        current_user=current_user,
+        listing=listing,
+        reason_text=request_text,
+        fail_on_error=True
+    )
+
+    return updated_listing
+
+
+@router.put("/{listing_id}", response_model=ListingResponse)
+async def update_listing(
+    session_id: str,
+    listing_id: str,
+    request: UpdateListingRequest,
+    db: DBSession = Depends(get_db),
+    current_user: models.User = Depends(get_current_user)
+):
+    """
+    Update listing details and trigger re-evaluation
+    """
+    session = verify_session_ownership(session_id, current_user, db)
+    listing = crud.get_listing_by_id(db=db, listing_id=listing_id)
+    if not listing or listing.session_id != session_id:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Listing not found"
+        )
+
+    updated = crud.update_listing(
+        db=db,
+        listing_id=listing_id,
+        title=request.title,
+        url=request.url,
+        price=request.price,
+        currency=request.currency,
+        marketplace=request.marketplace,
+        listing_metadata=request.listing_metadata,
+        description=request.description
+    )
+
+    if not updated:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Listing not found"
+        )
+
+    updated_listing = _run_listing_evaluation(
+        db=db,
+        session=session,
+        current_user=current_user,
+        listing=updated,
+        reason_text=f'Please re-evaluate "{updated.title}" after edits.',
+        fail_on_error=False
+    )
+
+    return updated_listing
+
+
+def _run_listing_evaluation(
+    db: DBSession,
+    session: models.Session,
+    current_user: models.User,
+    listing: models.Listing,
+    reason_text: str,
+    fail_on_error: bool
+) -> models.Listing:
+    """
+    Shared helper to trigger agent evaluation for a listing.
+    """
+    user_message = crud.create_message(
+        db=db,
+        session_id=session.id,
+        sender="user",
+        text=reason_text,
+        type="normal"
+    )
+
     agent_context = build_session_context(db, session, current_user)
     agent_request = AgentRequest(
         user_message=AgentUserMessage(
@@ -202,20 +304,28 @@ async def reevaluate_listing(
     agent_response = agent_service.process_request(agent_request)
 
     if isinstance(agent_response, AgentErrorResponse):
-        raise HTTPException(
-            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-            detail=agent_response.error.message
-        )
+        if fail_on_error:
+            raise HTTPException(
+                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                detail=agent_response.error.message
+            )
+        return listing
 
     agent_message = crud.create_message(
         db=db,
-        session_id=session_id,
+        session_id=session.id,
         sender="agent",
         text=agent_response.agent_message.text,
         type="normal"
     )
 
-    process_agent_actions(db, session_id, agent_response.actions, agent_message.id)
+    process_agent_actions(
+        db=db,
+        session_id=session.id,
+        actions=agent_response.actions,
+        agent_message_id=agent_message.id,
+        default_listing_id=listing.id,
+        available_listing_ids=[lst.id for lst in agent_context.listings]
+    )
 
-    updated_listing = crud.get_listing_by_id(db=db, listing_id=listing_id)
-    return updated_listing
+    return crud.get_listing_by_id(db=db, listing_id=listing.id)

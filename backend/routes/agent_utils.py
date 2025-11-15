@@ -2,7 +2,7 @@
 Shared helper functions for building agent context and processing actions.
 """
 from sqlalchemy.orm import Session as DBSession
-from typing import List
+from typing import List, Optional
 import crud
 import models
 from agent.schemas import (
@@ -45,6 +45,7 @@ def build_session_context(
             currency=listing.currency,
             marketplace=listing.marketplace,
             listing_metadata=metadata_value,
+            description=listing.description,
             score=listing.score,
             rationale=listing.rationale
         ))
@@ -67,11 +68,17 @@ def process_agent_actions(
     db: DBSession,
     session_id: str,
     actions: List[dict],
-    agent_message_id: str
+    agent_message_id: str,
+    default_listing_id: Optional[str] = None,
+    available_listing_ids: Optional[List[str]] = None
 ):
     """
     Apply structured agent actions to the database.
     """
+    available_listing_ids = available_listing_ids or []
+    last_evaluated_listing_id = None
+    clarification_state_dirty = False
+
     for action in actions:
         action_type = action.get("type")
 
@@ -87,10 +94,18 @@ def process_agent_actions(
                         score=score,
                         rationale=rationale
                     )
+                    last_evaluated_listing_id = listing_id
 
         elif action_type == "ASK_CLARIFYING_QUESTION":
             question_text = action.get("question")
             is_blocking = action.get("blocking", True)
+            listing_id = (
+                action.get("listing_id")
+                or default_listing_id
+                or last_evaluated_listing_id
+            )
+            if not listing_id and len(available_listing_ids) == 1:
+                listing_id = available_listing_ids[0]
 
             clarification_message = crud.create_message(
                 db=db,
@@ -99,16 +114,14 @@ def process_agent_actions(
                 text=question_text,
                 type="clarification_question",
                 is_blocking=is_blocking,
-                clarification_status="pending"
+                clarification_status="pending",
+                target_listing_id=listing_id
             )
 
-            if is_blocking:
-                crud.update_session_status(
-                    db=db,
-                    session_id=session_id,
-                    status="WAITING_FOR_CLARIFICATION",
-                    pending_clarification_id=clarification_message.id
-                )
+            clarification_state_dirty = clarification_state_dirty or is_blocking
 
         elif action_type == "UPDATE_PREFERENCES":
             continue
+
+    if clarification_state_dirty:
+        crud.sync_session_clarification_state(db, session_id)

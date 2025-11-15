@@ -100,11 +100,13 @@ class Message(Base):
     is_blocking = Column(Boolean, nullable=False, default=False)
     clarification_status = Column(String, nullable=True)  # 'pending' | 'answered' | 'skipped'
     answer_message_id = Column(String, ForeignKey("messages.id"), nullable=True)
+    target_listing_id = Column(String, ForeignKey("listings.id"), nullable=True)
     created_at = Column(TIMESTAMP, nullable=False, server_default=func.now())
 
     # Relationships
     session = relationship("Session", back_populates="messages", foreign_keys=[session_id])
     answer_message = relationship("Message", remote_side=[id], foreign_keys=[answer_message_id])
+    target_listing = relationship("Listing", foreign_keys=[target_listing_id])
 
 
 class Listing(Base):
@@ -119,6 +121,7 @@ class Listing(Base):
     currency = Column(String)
     marketplace = Column(String)
     listing_metadata = Column(JSON)  # Arbitrary per-category fields (renamed from 'metadata' which is reserved)
+    description = Column(Text, nullable=True)  # Pasted listing description text
     status = Column(String, nullable=False, default="active")  # 'active' | 'removed'
 
     # Agent evaluation fields

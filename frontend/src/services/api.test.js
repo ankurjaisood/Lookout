@@ -3,7 +3,7 @@
  */
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import axios from 'axios';
-import { authAPI, sessionsAPI, listingsAPI, messagesAPI } from './api';
+import { authAPI, sessionsAPI, listingsAPI, messagesAPI, clarificationsAPI } from './api';
 
 // Mock axios
 vi.mock('axios');
@@ -227,6 +227,23 @@ describe('API Service', () => {
 
       expect(mockPost).toHaveBeenCalledWith('/api/sessions/session-123/listings/listing-456/reevaluate');
     });
+
+    it('should update listing', async () => {
+      const mockResponse = { data: { id: 'listing-456', title: 'Updated' } };
+      const mockPut = vi.fn().mockResolvedValue(mockResponse);
+      axios.create = vi.fn(() => ({
+        put: mockPut,
+      }));
+
+      const { listingsAPI: freshListingsAPI } = await import('./api?update=' + Date.now());
+
+      await freshListingsAPI.update('session-123', 'listing-456', { title: 'Updated' });
+
+      expect(mockPut).toHaveBeenCalledWith(
+        '/api/sessions/session-123/listings/listing-456',
+        { title: 'Updated' }
+      );
+    });
   });
 
   describe('messagesAPI', () => {
@@ -258,6 +275,25 @@ describe('API Service', () => {
       await freshMessagesAPI.list('session-123');
 
       expect(mockGet).toHaveBeenCalledWith('/api/sessions/session-123/messages');
+    });
+  });
+
+  describe('clarificationsAPI', () => {
+    it('should submit clarification answer', async () => {
+      const mockResponse = { data: { id: 'msg-clar-answer' } };
+      const mockPost = vi.fn().mockResolvedValue(mockResponse);
+      axios.create = vi.fn(() => ({
+        post: mockPost,
+      }));
+
+      const { clarificationsAPI: freshClarificationsAPI } = await import('./api?update=' + Date.now());
+
+      await freshClarificationsAPI.answer('session-123', 'clar-456', 'It has 50k miles');
+
+      expect(mockPost).toHaveBeenCalledWith(
+        '/api/sessions/session-123/clarifications/clar-456/answer',
+        { text: 'It has 50k miles' }
+      );
     });
   });
 });

@@ -189,7 +189,8 @@ def create_message(
     text: str,
     type: str = "normal",
     is_blocking: bool = False,
-    clarification_status: Optional[str] = None
+    clarification_status: Optional[str] = None,
+    target_listing_id: Optional[str] = None
 ) -> models.Message:
     """Create a new message"""
     db_message = models.Message(
@@ -198,7 +199,8 @@ def create_message(
         type=type,
         text=text,
         is_blocking=is_blocking,
-        clarification_status=clarification_status
+        clarification_status=clarification_status,
+        target_listing_id=target_listing_id
     )
     db.add(db_message)
     db.commit()
@@ -216,6 +218,53 @@ def list_messages_by_session(db: Session, session_id: str, limit: Optional[int] 
         query = query.limit(limit)
 
     return query.all()
+
+
+def list_pending_clarifications(db: Session, session_id: str) -> List[models.Message]:
+    """List blocking clarifying questions that are still pending"""
+    return db.query(models.Message).filter(
+        models.Message.session_id == session_id,
+        models.Message.type == "clarification_question",
+        models.Message.is_blocking.is_(True),
+        models.Message.clarification_status == "pending"
+    ).order_by(models.Message.created_at).all()
+
+
+def sync_session_clarification_state(db: Session, session_id: str) -> Optional[models.Session]:
+    """
+    Ensure session status/pending_clarification_id reflect current pending clarifying questions
+    """
+    pending = list_pending_clarifications(db, session_id)
+    if pending:
+        return update_session_status(
+            db=db,
+            session_id=session_id,
+            status="WAITING_FOR_CLARIFICATION",
+            pending_clarification_id=pending[0].id
+        )
+    return update_session_status(
+        db=db,
+        session_id=session_id,
+        status="ACTIVE",
+        pending_clarification_id=None
+    )
+
+
+def list_listing_clarifications_by_session(
+    db: Session,
+    session_id: str
+) -> List[models.Message]:
+    """List clarifying questions that target specific listings for a session"""
+    return db.query(models.Message).filter(
+        models.Message.session_id == session_id,
+        models.Message.type == "clarification_question",
+        models.Message.target_listing_id.isnot(None)
+    ).order_by(models.Message.created_at).all()
+
+
+def get_message_by_id(db: Session, message_id: str) -> Optional[models.Message]:
+    """Retrieve a message by ID"""
+    return db.query(models.Message).filter(models.Message.id == message_id).first()
 
 
 def update_message_clarification(
@@ -245,7 +294,8 @@ def create_listing(
     price: Optional[float] = None,
     currency: Optional[str] = None,
     marketplace: Optional[str] = None,
-    listing_metadata: Optional[dict] = None
+    listing_metadata: Optional[dict] = None,
+    description: Optional[str] = None
 ) -> models.Listing:
     """Create a new listing"""
     db_listing = models.Listing(
@@ -255,7 +305,8 @@ def create_listing(
         price=price,
         currency=currency,
         marketplace=marketplace,
-        listing_metadata=listing_metadata or {}
+        listing_metadata=listing_metadata or {},
+        description=description
     )
     db.add(db_listing)
     db.commit()
@@ -345,3 +396,37 @@ def delete_agent_memory(db: Session, key: str) -> bool:
         db.commit()
         return True
     return False
+def update_listing(
+    db: Session,
+    listing_id: str,
+    title: Optional[str] = None,
+    url: Optional[str] = None,
+    price: Optional[float] = None,
+    currency: Optional[str] = None,
+    marketplace: Optional[str] = None,
+    listing_metadata: Optional[dict] = None,
+    description: Optional[str] = None
+) -> Optional[models.Listing]:
+    """Update listing fields"""
+    listing = get_listing_by_id(db, listing_id)
+    if not listing:
+        return None
+
+    if title is not None:
+        listing.title = title
+    if url is not None:
+        listing.url = url
+    if price is not None:
+        listing.price = price
+    if currency is not None:
+        listing.currency = currency
+    if marketplace is not None:
+        listing.marketplace = marketplace
+    if listing_metadata is not None:
+        listing.listing_metadata = listing_metadata
+    if description is not None:
+        listing.description = description
+
+    db.commit()
+    db.refresh(listing)
+    return listing
