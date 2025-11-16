@@ -633,6 +633,12 @@ class TestClarificationsAPI:
                             "question": "Any accident history for Listing 2?",
                             "blocking": True,
                             "listing_id": listing_b
+                        },
+                        {
+                            "type": "ASK_CLARIFYING_QUESTION",
+                            "question": "What's the mileage for Listing 1?",  # duplicate
+                            "blocking": True,
+                            "listing_id": listing_a
                         }
                     ]
                 )
