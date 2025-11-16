@@ -2,7 +2,8 @@
 Shared helper functions for building agent context and processing actions.
 """
 from sqlalchemy.orm import Session as DBSession
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, DefaultDict
+from collections import defaultdict
 import crud
 import models
 from agent.schemas import (
@@ -78,6 +79,11 @@ def process_agent_actions(
     """
     available_listing_ids = available_listing_ids or []
     listing_contexts = listing_contexts or {}
+    existing_question_map: DefaultDict[str, set] = defaultdict(set)
+
+    for clar in crud.list_pending_clarifications(db, session_id):
+        key = clar.target_listing_id or "__global__"
+        existing_question_map[key].add((clar.text or "").strip().lower())
     last_evaluated_listing_id = None
     clarification_state_dirty = False
 
@@ -108,11 +114,15 @@ def process_agent_actions(
             )
             if not listing_id and len(available_listing_ids) == 1:
                 listing_id = available_listing_ids[0]
+            dedup_key = listing_id or "__global__"
+            normalized_question = (question_text or "").strip().lower()
 
             if listing_id and _question_answered_by_context(
                 question_text,
                 listing_contexts.get(listing_id)
             ):
+                continue
+            if normalized_question and normalized_question in existing_question_map[dedup_key]:
                 continue
 
             clarification_message = crud.create_message(
@@ -126,6 +136,7 @@ def process_agent_actions(
                 target_listing_id=listing_id
             )
 
+            existing_question_map[dedup_key].add(normalized_question)
             clarification_state_dirty = clarification_state_dirty or is_blocking
 
         elif action_type == "UPDATE_PREFERENCES":
