@@ -135,6 +135,12 @@ Each listing shows:
 - Click the “Edit” button on a listing card to adjust title, URL, price, marketplace, or the pasted description
 - Saving changes automatically reruns the evaluation so scores and rationales stay current
 
+### 9. Load Demo Data (optional)
+
+- Start the backend so the database is initialized (`./start_backend.sh` or `./start.sh`)
+- Run `./demo.sh` (or `./demo.sh path/to/your.json`) from the repo root to populate sessions/listings defined in `demo.json`
+- The script inserts sample users/sessions/listings and automatically runs the agent on each listing so you can explore the UI immediately
+
 ## Manual Setup (if scripts fail)
 
 ### Backend Setup

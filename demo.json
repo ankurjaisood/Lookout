@@ -1,0 +1,158 @@
+{
+  "users": [
+    {
+      "email": "demo@example.com",
+      "password": "password123",
+      "display_name": "Demo User",
+      "sessions": [
+        {
+          "title": "Find a used Miata",
+          "category": "cars",
+          "requirements": "Manual transmission, under $18k, clean history",
+          "listings": [
+            {
+              "title": "2014 Mazda Miata Club",
+              "url": "https://www.autotrader.com/cars-for-sale/vehicledetails.xhtml?listingId=698234567",
+              "price": 13500,
+              "currency": "USD",
+              "marketplace": "ExampleCars",
+              "metadata": {
+                "year": 2014,
+                "mileage": 78000,
+                "transmission": "manual"
+              },
+              "description": "One-owner Miata with 78k miles, Club trim, clean Carfax, recent clutch."
+            },
+            {
+              "title": "2015 Mazda Miata Grand Touring",
+              "url": "https://bringatrailer.com/listing/2015-mazda-mx-5-miata-8/",
+              "price": 16500,
+              "currency": "USD",
+              "marketplace": "ExampleCars",
+              "metadata": {
+                "year": 2015,
+                "mileage": 62000,
+                "transmission": "manual"
+              },
+              "description": "Garaged Grand Touring with leather, Bose audio, and full service history."
+            }
+          ]
+        },
+        {
+          "title": "Everyday Laptop Hunt",
+          "category": "electronics",
+          "requirements": "Lightweight, 16GB RAM, under $1200",
+          "listings": [
+            {
+              "title": "2023 Ultrabook Pro 14\"",
+              "url": "https://www.bestbuy.com/site/lg-gram-14-laptop-14-wuxga-intel-evo-13th-gen-intel-core-i7-1360p-16gb-memory-1tb-ssd-obisidian-black/6549224.p",
+              "price": 1099,
+              "currency": "USD",
+              "marketplace": "ExampleTech",
+              "metadata": {
+                "cpu": "Intel i7-1360P",
+                "ram_gb": 16,
+                "storage": "512GB SSD"
+              },
+              "description": "2.8lb ultrabook with 16GB RAM, 512GB SSD, 120Hz display, excellent battery life."
+            },
+            {
+              "title": "Lenovo Yoga 7i 14\"",
+              "url": "https://www.lenovo.com/us/en/p/laptops/yoga/yoga-2-in-1-series/yoga-7i-14-inch-14-intel/len101y0026",
+              "price": 899,
+              "currency": "USD",
+              "marketplace": "Lenovo",
+              "metadata": {
+                "cpu": "Intel i5-1340P",
+                "ram_gb": 16,
+                "storage": "512GB SSD"
+              },
+              "description": "Convertible Yoga 7i with 16GB RAM, Dolby Vision touchscreen, and all-day battery."
+            },
+            {
+              "title": "Framework Laptop 13 (DIY)",
+              "url": "https://frame.work/products/laptop-diy-intel-13-gen",
+              "price": 1049,
+              "currency": "USD",
+              "marketplace": "Framework",
+              "metadata": {
+                "cpu": "Intel i7-1370P",
+                "ram_gb": 16,
+                "storage": "1TB SSD"
+              },
+              "description": "Modular Framework DIY kit with i7-1370P, 16GB RAM, upgradeable storage, repair-friendly design."
+            }
+          ]
+        },
+        {
+          "title": "Weekend Camper Vans",
+          "category": "cars",
+          "requirements": "Under $45k, low mileage, ready for camping",
+          "listings": [
+            {
+              "title": "2020 Sprinter Adventure Build",
+              "url": "https://vanlifetrader.com/listing/2020-mercedes-sprinter-170-4x4/",
+              "price": 42000,
+              "currency": "USD",
+              "marketplace": "OverlandMarket",
+              "metadata": {
+                "year": 2020,
+                "mileage": 28000,
+                "converted": true
+              },
+              "description": "Professionally converted Sprinter with solar, kitchenette, queen bed, heater. 28k miles."
+            },
+            {
+              "title": "2006 Ford Econovan",
+              "url": "https://www.kijiji.ca/v-cars-trucks/barrie/converted-ford-e350-camper-van/1679876543",
+              "price": 12500,
+              "currency": "USD",
+              "marketplace": "LocalClassifieds",
+              "metadata": {
+                "year": 2006,
+                "mileage": 160000,
+                "converted": "basic"
+              },
+              "description": "High-mileage Econovan with DIY plywood bed and old camping gear. Needs cosmetic work."
+            }
+          ]
+        },
+        {
+          "title": "Watch Collector Picks",
+          "category": "collectibles",
+          "requirements": "Mechanical chronographs, strong provenance, under $12k",
+          "listings": [
+            {
+              "title": "Omega Speedmaster 3570.50 (2001)",
+              "url": "https://watchcharts.com/listing/123456-omega-speedmaster-3570-50",
+              "price": 8100,
+              "currency": "USD",
+              "marketplace": "ChronoWorld",
+              "metadata": {
+                "brand": "Omega",
+                "movement": "Cal. 1861",
+                "condition": "excellent",
+                "box_papers": true
+              },
+              "description": "Full set Speedmaster Professional from 2001. Recently serviced, runs +3s/day, hesalite crystal."
+            },
+            {
+              "title": "Vintage Seiko 6138 Panda",
+              "url": "https://www.reddit.com/r/Watchexchange/comments/18plm5p/wts_seiko_6138_panda/",
+              "price": 2600,
+              "currency": "USD",
+              "marketplace": "VintageWatchHub",
+              "metadata": {
+                "brand": "Seiko",
+                "movement": "Cal. 6138",
+                "condition": "fair",
+                "box_papers": false
+              },
+              "description": "Well-worn 6138 Panda, aftermarket bracelet, dial patina, service history unknown."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
