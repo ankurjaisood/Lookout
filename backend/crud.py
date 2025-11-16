@@ -262,6 +262,21 @@ def list_listing_clarifications_by_session(
     ).order_by(models.Message.created_at).all()
 
 
+def list_pending_clarifications_for_listing(
+    db: Session,
+    session_id: str,
+    listing_id: str
+) -> List[models.Message]:
+    """List pending blocking clarifications for a specific listing"""
+    return db.query(models.Message).filter(
+        models.Message.session_id == session_id,
+        models.Message.type == "clarification_question",
+        models.Message.is_blocking.is_(True),
+        models.Message.clarification_status == "pending",
+        models.Message.target_listing_id == listing_id
+    ).order_by(models.Message.created_at).all()
+
+
 def get_message_by_id(db: Session, message_id: str) -> Optional[models.Message]:
     """Retrieve a message by ID"""
     return db.query(models.Message).filter(models.Message.id == message_id).first()

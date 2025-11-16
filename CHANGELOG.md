@@ -22,6 +22,7 @@ This file tracks incremental implementation progress for the Marketplace Researc
 - Added inline listing editing with pasted descriptions and automatic re-evaluation on create/update
 - Updated agent prompt guidance so each clarifying question only asks about one specific detail, improving readability of listing cards
 - Clarifying questions now explicitly check listing descriptions and previous answers to avoid asking for information that already exists
+- Added a demo harness (`demo.sh` + `demo.json`) to quickly seed sessions/listings and run evaluations for UI/agent smoke tests
 
 ### Phase 0: Project Setup & Infrastructure ✅
 - ✅ Task 0.1: Initialize Monorepo Structure

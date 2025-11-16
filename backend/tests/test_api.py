@@ -678,3 +678,62 @@ class TestClarificationsAPI:
         listing_final = {l["id"]: l for l in final_state["listings"]}
         assert listing_final[listing_a]["clarifications"][0]["clarification_status"] == "answered"
         assert listing_final[listing_b]["clarifications"][0]["clarification_status"] == "answered"
+
+    def test_clarification_auto_resolved_on_listing_update(self, authenticated_client_with_listing, monkeypatch):
+        """Pending clarification is auto-answered when listing description provides the detail"""
+        client = authenticated_client_with_listing
+        session_id = client.session_id
+        listing_id = client.listing_id
+
+        call_state = {"phase": "ask"}
+
+        def fake_process_request(self, request):
+            if call_state["phase"] == "ask":
+                call_state["phase"] = "answer"
+                return AgentResponse(
+                    agent_message=AgentMessage(text="Need more info."),
+                    actions=[
+                        {
+                            "type": "ASK_CLARIFYING_QUESTION",
+                            "question": "What is the mileage for this listing?",
+                            "blocking": True,
+                            "listing_id": listing_id
+                        }
+                    ]
+                )
+            return AgentResponse(
+                agent_message=AgentMessage(text="Updated."),
+                actions=[]
+            )
+
+        monkeypatch.setattr(
+            "routes.message_routes.AgentService.process_request",
+            fake_process_request
+        )
+        monkeypatch.setattr(
+            "routes.listing_routes.AgentService.process_request",
+            fake_process_request
+        )
+
+        # Trigger clarification
+        client.post(
+            f"/api/sessions/{session_id}/messages",
+            json={"text": "Need evaluation"}
+        )
+
+        state = client.get(f"/api/sessions/{session_id}/state").json()
+        listing_state = next(item for item in state["listings"] if item["id"] == listing_id)
+        assert len(listing_state["clarifications"]) == 1
+        assert listing_state["clarifications"][0]["clarification_status"] == "pending"
+
+        # Update listing description with mileage info
+        client.put(
+            f"/api/sessions/{session_id}/listings/{listing_id}",
+            json={"description": "This Miata has 52,000 miles and full records."}
+        )
+
+        updated_state = client.get(f"/api/sessions/{session_id}/state").json()
+        updated_listing = next(item for item in updated_state["listings"] if item["id"] == listing_id)
+        clarification = updated_listing["clarifications"][0]
+        assert clarification["clarification_status"] == "answered"
+        assert clarification["answer_text"] == "Automatically resolved after recent listing update."

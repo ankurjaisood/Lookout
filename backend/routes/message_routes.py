@@ -217,13 +217,22 @@ def _call_agent_and_record_response(
         type="normal"
     )
 
+    listing_context_map = {
+        lst.id: {
+            "listing_metadata": lst.listing_metadata,
+            "description": lst.description
+        }
+        for lst in agent_context.listings
+    }
+
     process_agent_actions(
         db=db,
         session_id=session.id,
         actions=agent_response.actions,
         agent_message_id=agent_message.id,
         default_listing_id=None,
-        available_listing_ids=[listing.id for listing in agent_context.listings]
+        available_listing_ids=[listing.id for listing in agent_context.listings],
+        listing_contexts=listing_context_map
     )
 
     return user_message
